@@ -1,19 +1,18 @@
 //
 //  ContentView.swift
+//  Reflect Watch Watch App
+//
+//  Created by Mark Friedlander and ChatGPT on 5/1/25.
+//
 //  Reflect: Creative Sparks
+//  Copyright © 2025 Mark Friedlander & OpenAI. All rights reserved.
+//  This app is a collaborative effort between a human and an AI, developed to inspire creativity and reflection through randomly generated prompts.
 //
-//  Created by Mark Friedlander in collaboration with ChatGPT on 2025-04-27.
-//
-//  © 2025 Mark Friedlander and OpenAI. All rights reserved.
-//
-//  This file is part of Reflect: Creative Sparks, a creative prompt app designed
-//  to inspire fresh thinking and new perspectives.
-//
+
 import SwiftUI
 
-
 struct ContentView: View {
-    // List of creative prompts to display
+    /// An array of creative prompts used to inspire reflection. A new one is shown on tap.
     let prompts = [
         "What is the question behind this",
         "Consider the lifespan of this idea",
@@ -117,120 +116,68 @@ struct ContentView: View {
         "Trust the emergent possibilities"
     ]
 
-    // Tracks whether auto mode is enabled using persistent storage
-    @AppStorage("isAutoModeEnabled") private var isAutoModeEnabled = false
-    // Holds the currently displayed prompt text
+    /// The currently displayed prompt, initially set to "Reflect"
     @State private var currentPrompt = "Reflect"
-    // Controls animation scaling for prompt transitions (currently unused)
+
+    /// Controls the scaling animation of the prompt text
     @State private var scale: CGFloat = 1.0
-    // Controls display of the full title ("Reflect: Creative Sparks")
+
+    /// Controls whether the full title is shown on launch
     @State private var showFullTitle = true
-    // Controls visibility of the toast message
-    @State private var showToast = false
-    // Holds the message shown in the toast
-    @State private var toastMessage = ""
 
+    /// The main view for the watchOS app. Displays a title briefly, then a random prompt which updates on tap with haptic feedback.
     var body: some View {
-        // Background and main layout container
-        ZStack {
-            Color.black.ignoresSafeArea()
-
-            // Prompt display and animated title
-            VStack {
-                Spacer()
-                if showFullTitle {
-                    Text("Reflect:\nCreative Sparks")
-                        .multilineTextAlignment(.center)
-                        .font(.title)
-                        .foregroundColor(.white)
-                        .padding()
-                        .transition(.opacity)
-                        .onAppear {
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
-                                withAnimation(.easeInOut(duration: 1.0)) {
-                                    showFullTitle = false
-                                }
+        VStack {
+            Spacer()
+            if showFullTitle {
+                Text("Reflect: Creative Sparks")
+                    .multilineTextAlignment(.center)
+                    .font(.headline)
+                    .minimumScaleFactor(0.5)
+                    .padding()
+                    .transition(.opacity)
+            } else {
+                Text(currentPrompt)
+                    .multilineTextAlignment(.center)
+                    .font(.headline)
+                    .minimumScaleFactor(0.5)
+                    .padding()
+                    .scaleEffect(scale)
+                    .onChange(of: currentPrompt) { _ in
+                        // Triggers a brief scale animation when the prompt changes
+                        withAnimation(.easeInOut(duration: 0.2)) {
+                            scale = 0.95
+                        }
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                            withAnimation(.easeInOut(duration: 0.2)) {
+                                scale = 1.0
                             }
                         }
-                } else {
-                    Text(currentPrompt)
-                        .multilineTextAlignment(.center)
-                        .font(.title2)
-                        .foregroundColor(.white)
-                        .padding()
-                        .transition(.opacity)
-                        .id(currentPrompt) // force transition on change
-                }
-                Spacer()
+                    }
             }
-            .contentShape(Rectangle())
-            // Tap gesture: disables auto mode if active and updates prompt
-            .onTapGesture {
-                if isAutoModeEnabled {
-                    isAutoModeEnabled = false
-                    showToastMessage("Auto mode off")
-                }
-                updatePrompt()
-            }
-            // Long press gesture: toggles auto mode and shows toast
-            .onLongPressGesture {
-                isAutoModeEnabled.toggle()
-                showToastMessage(isAutoModeEnabled ? "Auto mode on" : "Auto mode off")
-            }
-
-            // Toast message view shown at bottom of screen
-            if showToast {
-                VStack {
-                    Spacer()
-                    Text(toastMessage)
-                        .font(.caption)
-                        .foregroundColor(.white)
-                        .opacity(0.8)
-                        .padding(.bottom, 20)
-                        .transition(.opacity)
-                        .animation(.easeInOut(duration: 1.0), value: showToast)
-                }
-            }
+            Spacer()
         }
-        // Start auto mode (looped prompt updates) if enabled
         .onAppear {
-            startAutoModeIfNeeded()
+            // Automatically fades out the title after 2.5 seconds
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+                withAnimation(.easeInOut(duration: 1.0)) {
+                    showFullTitle = false
+                }
+            }
         }
-        // Restart auto mode loop if toggled on again
-        .onChange(of: isAutoModeEnabled) {
-            if isAutoModeEnabled {
-                startAutoModeIfNeeded()
+        .contentShape(Rectangle()) // Makes the entire area tappable
+        .onTapGesture {
+            // When tapped, play a light haptic and update the prompt with a short scaling animation
+            WKInterfaceDevice.current().play(.click)
+            withAnimation(.easeInOut(duration: 0.3)) {
+                let index = Int.random(in: 0..<prompts.count)
+                currentPrompt = prompts[index]
             }
         }
     }
+}
 
-    // Selects a new random prompt from the list
-    private func updatePrompt() {
-        let index = Int.random(in: 0..<prompts.count)
-        currentPrompt = prompts[index]
-    }
-
-    // Recursively schedules prompt updates every 6 seconds while auto mode is active
-    private func startAutoModeIfNeeded() {
-        guard isAutoModeEnabled else { return }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 6) {
-            if isAutoModeEnabled {
-                updatePrompt()
-                startAutoModeIfNeeded()
-            }
-        }
-    }
-
-    // Displays a fading toast message with optional animation
-    private func showToastMessage(_ message: String) {
-        toastMessage = message
-        withAnimation(.easeInOut(duration: 1.0)) {
-            showToast = true
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
-            withAnimation(.easeInOut(duration: 1.0)) {
-                showToast = false
-            }
-        }
-    }
+/// Provides a preview of the ContentView in Xcode canvas
+#Preview {
+    ContentView()
 }
