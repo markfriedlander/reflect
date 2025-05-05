@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Reflect TV.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
 		<key>Reflect Watch Watch App.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
@@ -12,7 +17,40 @@
 		<key>Reflect.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>2</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>85CE5BA22DBF365B00D1B87C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>85CE5BB22DBF365E00D1B87C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>85CE5BBC2DBF365E00D1B87C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>85E4D8112DC47C3B00B7413E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>85E4D8202DC47C3E00B7413E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>85E4D82A2DC47C3E00B7413E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

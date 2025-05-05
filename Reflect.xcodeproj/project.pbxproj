@@ -11,6 +11,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		852BEF7C2DC6C633006A5D3A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 85CE5B9B2DBF365B00D1B87C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 852BEF6B2DC6C62F006A5D3A;
+			remoteInfo = "Reflect TV";
+		};
+		852BEF862DC6C633006A5D3A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 85CE5B9B2DBF365B00D1B87C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 852BEF6B2DC6C62F006A5D3A;
+			remoteInfo = "Reflect TV";
+		};
 		85CE5BB42DBF365E00D1B87C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 85CE5B9B2DBF365B00D1B87C /* Project object */;
@@ -63,6 +77,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		852BEF6C2DC6C62F006A5D3A /* Reflect TV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reflect TV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		852BEF7B2DC6C633006A5D3A /* Reflect TVTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Reflect TVTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		852BEF852DC6C633006A5D3A /* Reflect TVUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Reflect TVUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		85CE5BA32DBF365B00D1B87C /* Reflect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reflect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85CE5BB32DBF365E00D1B87C /* ReflectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReflectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		85CE5BBD2DBF365E00D1B87C /* ReflectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReflectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,9 +88,35 @@
 		85E4D82B2DC47C3E00B7413E /* Reflect Watch Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Reflect Watch Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		852BEF972DC6C84C006A5D3A /* Exceptions for "Reflect" folder in "Reflect TV" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Prompts.swift,
+			);
+			target = 852BEF6B2DC6C62F006A5D3A /* Reflect TV */;
+		};
+		852BEF992DC6C979006A5D3A /* Exceptions for "Reflect" folder in "Reflect Watch Watch App" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Prompts.swift,
+			);
+			target = 85E4D8112DC47C3B00B7413E /* Reflect Watch Watch App */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		852BEF6D2DC6C630006A5D3A /* Reflect TV */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Reflect TV";
+			sourceTree = "<group>";
+		};
 		85CE5BA52DBF365B00D1B87C /* Reflect */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				852BEF992DC6C979006A5D3A /* Exceptions for "Reflect" folder in "Reflect Watch Watch App" target */,
+				852BEF972DC6C84C006A5D3A /* Exceptions for "Reflect" folder in "Reflect TV" target */,
+			);
 			path = Reflect;
 			sourceTree = "<group>";
 		};
@@ -85,6 +128,27 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		852BEF692DC6C62F006A5D3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		852BEF782DC6C633006A5D3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		852BEF822DC6C633006A5D3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		85CE5BA02DBF365B00D1B87C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -135,6 +199,7 @@
 			children = (
 				85CE5BA52DBF365B00D1B87C /* Reflect */,
 				85E4D8132DC47C3B00B7413E /* Reflect Watch Watch App */,
+				852BEF6D2DC6C630006A5D3A /* Reflect TV */,
 				85CE5BA42DBF365B00D1B87C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -148,6 +213,9 @@
 				85E4D8122DC47C3B00B7413E /* Reflect Watch Watch App.app */,
 				85E4D8212DC47C3E00B7413E /* Reflect Watch Watch AppTests.xctest */,
 				85E4D82B2DC47C3E00B7413E /* Reflect Watch Watch AppUITests.xctest */,
+				852BEF6C2DC6C62F006A5D3A /* Reflect TV.app */,
+				852BEF7B2DC6C633006A5D3A /* Reflect TVTests.xctest */,
+				852BEF852DC6C633006A5D3A /* Reflect TVUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -155,6 +223,68 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		852BEF6B2DC6C62F006A5D3A /* Reflect TV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 852BEF8D2DC6C633006A5D3A /* Build configuration list for PBXNativeTarget "Reflect TV" */;
+			buildPhases = (
+				852BEF682DC6C62F006A5D3A /* Sources */,
+				852BEF692DC6C62F006A5D3A /* Frameworks */,
+				852BEF6A2DC6C62F006A5D3A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				852BEF6D2DC6C630006A5D3A /* Reflect TV */,
+			);
+			name = "Reflect TV";
+			packageProductDependencies = (
+			);
+			productName = "Reflect TV";
+			productReference = 852BEF6C2DC6C62F006A5D3A /* Reflect TV.app */;
+			productType = "com.apple.product-type.application";
+		};
+		852BEF7A2DC6C633006A5D3A /* Reflect TVTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 852BEF902DC6C633006A5D3A /* Build configuration list for PBXNativeTarget "Reflect TVTests" */;
+			buildPhases = (
+				852BEF772DC6C633006A5D3A /* Sources */,
+				852BEF782DC6C633006A5D3A /* Frameworks */,
+				852BEF792DC6C633006A5D3A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				852BEF7D2DC6C633006A5D3A /* PBXTargetDependency */,
+			);
+			name = "Reflect TVTests";
+			packageProductDependencies = (
+			);
+			productName = "Reflect TVTests";
+			productReference = 852BEF7B2DC6C633006A5D3A /* Reflect TVTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		852BEF842DC6C633006A5D3A /* Reflect TVUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 852BEF932DC6C633006A5D3A /* Build configuration list for PBXNativeTarget "Reflect TVUITests" */;
+			buildPhases = (
+				852BEF812DC6C633006A5D3A /* Sources */,
+				852BEF822DC6C633006A5D3A /* Frameworks */,
+				852BEF832DC6C633006A5D3A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				852BEF872DC6C633006A5D3A /* PBXTargetDependency */,
+			);
+			name = "Reflect TVUITests";
+			packageProductDependencies = (
+			);
+			productName = "Reflect TVUITests";
+			productReference = 852BEF852DC6C633006A5D3A /* Reflect TVUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		85CE5BA22DBF365B00D1B87C /* Reflect */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 85CE5BC72DBF365E00D1B87C /* Build configuration list for PBXNativeTarget "Reflect" */;
@@ -291,6 +421,17 @@
 				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
+					852BEF6B2DC6C62F006A5D3A = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					852BEF7A2DC6C633006A5D3A = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 852BEF6B2DC6C62F006A5D3A;
+					};
+					852BEF842DC6C633006A5D3A = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 852BEF6B2DC6C62F006A5D3A;
+					};
 					85CE5BA22DBF365B00D1B87C = {
 						CreatedOnToolsVersion = 16.2;
 					};
@@ -335,11 +476,35 @@
 				85E4D8112DC47C3B00B7413E /* Reflect Watch Watch App */,
 				85E4D8202DC47C3E00B7413E /* Reflect Watch Watch AppTests */,
 				85E4D82A2DC47C3E00B7413E /* Reflect Watch Watch AppUITests */,
+				852BEF6B2DC6C62F006A5D3A /* Reflect TV */,
+				852BEF7A2DC6C633006A5D3A /* Reflect TVTests */,
+				852BEF842DC6C633006A5D3A /* Reflect TVUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		852BEF6A2DC6C62F006A5D3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		852BEF792DC6C633006A5D3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		852BEF832DC6C633006A5D3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		85CE5BA12DBF365B00D1B87C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -385,6 +550,27 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		852BEF682DC6C62F006A5D3A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		852BEF772DC6C633006A5D3A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		852BEF812DC6C633006A5D3A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		85CE5B9F2DBF365B00D1B87C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -430,6 +616,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		852BEF7D2DC6C633006A5D3A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 852BEF6B2DC6C62F006A5D3A /* Reflect TV */;
+			targetProxy = 852BEF7C2DC6C633006A5D3A /* PBXContainerItemProxy */;
+		};
+		852BEF872DC6C633006A5D3A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 852BEF6B2DC6C62F006A5D3A /* Reflect TV */;
+			targetProxy = 852BEF862DC6C633006A5D3A /* PBXContainerItemProxy */;
+		};
 		85CE5BB52DBF365E00D1B87C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 85CE5BA22DBF365B00D1B87C /* Reflect */;
@@ -458,6 +654,146 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		852BEF8E2DC6C633006A5D3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_ASSET_PATHS = "\"Reflect TV/Preview Content\"";
+				DEVELOPMENT_TEAM = FBUNBDS7R7;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Reflect: Creative Sparks";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.MarkFriedlander.Reflect-TV";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 18.2;
+			};
+			name = Debug;
+		};
+		852BEF8F2DC6C633006A5D3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_ASSET_PATHS = "\"Reflect TV/Preview Content\"";
+				DEVELOPMENT_TEAM = FBUNBDS7R7;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Reflect: Creative Sparks";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.MarkFriedlander.Reflect-TV";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 18.2;
+			};
+			name = Release;
+		};
+		852BEF912DC6C633006A5D3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FBUNBDS7R7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.MarkFriedlander.Reflect-TVTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Reflect TV.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Reflect TV";
+				TVOS_DEPLOYMENT_TARGET = 18.2;
+			};
+			name = Debug;
+		};
+		852BEF922DC6C633006A5D3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FBUNBDS7R7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.MarkFriedlander.Reflect-TVTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Reflect TV.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Reflect TV";
+				TVOS_DEPLOYMENT_TARGET = 18.2;
+			};
+			name = Release;
+		};
+		852BEF942DC6C633006A5D3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FBUNBDS7R7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.MarkFriedlander.Reflect-TVUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_TARGET_NAME = "Reflect TV";
+				TVOS_DEPLOYMENT_TARGET = 18.2;
+			};
+			name = Debug;
+		};
+		852BEF952DC6C633006A5D3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FBUNBDS7R7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.MarkFriedlander.Reflect-TVUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_TARGET_NAME = "Reflect TV";
+				TVOS_DEPLOYMENT_TARGET = 18.2;
+			};
+			name = Release;
+		};
 		85CE5BC52DBF365E00D1B87C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -583,11 +919,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Reflect/Preview Content\"";
 				DEVELOPMENT_TEAM = FBUNBDS7R7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Reflect: Creative Sparks";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -612,11 +950,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Reflect/Preview Content\"";
 				DEVELOPMENT_TEAM = FBUNBDS7R7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Reflect: Creative Sparks";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -713,12 +1053,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Reflect Watch Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = FBUNBDS7R7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "Reflect Watch";
+				INFOPLIST_KEY_CFBundleDisplayName = Reflect;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.MarkFriedlander.Reflect;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -743,12 +1083,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Reflect Watch Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = FBUNBDS7R7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "Reflect Watch";
+				INFOPLIST_KEY_CFBundleDisplayName = Reflect;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.MarkFriedlander.Reflect;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -848,6 +1188,33 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		852BEF8D2DC6C633006A5D3A /* Build configuration list for PBXNativeTarget "Reflect TV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				852BEF8E2DC6C633006A5D3A /* Debug */,
+				852BEF8F2DC6C633006A5D3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		852BEF902DC6C633006A5D3A /* Build configuration list for PBXNativeTarget "Reflect TVTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				852BEF912DC6C633006A5D3A /* Debug */,
+				852BEF922DC6C633006A5D3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		852BEF932DC6C633006A5D3A /* Build configuration list for PBXNativeTarget "Reflect TVUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				852BEF942DC6C633006A5D3A /* Debug */,
+				852BEF952DC6C633006A5D3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		85CE5B9E2DBF365B00D1B87C /* Build configuration list for PBXProject "Reflect" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
