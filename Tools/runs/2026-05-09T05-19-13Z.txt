@@ -1,0 +1,63 @@
+Reflect AFM Harness — 2026-05-09T05-19-13Z
+N per move: 2, pass rate: 20/23
+
+=== Subtraction ===
+  [1] ✓ (4w): Remove the final word
+      raw: Remove the final word.
+  [2] ✓ (8w): Keep only the first element of each word
+      raw: Keep only the first element of each word.
+
+=== Inversion ===
+  [1] ✗ domain-assumed (4w): Paint a blank canvas
+      raw: Paint a blank canvas.
+  [2] ✗ too-short (2w): Move: Inversion
+
+=== Constraint ===
+  [1] ✓ (6w): Play solo with a missing instrument
+      raw: Play solo with a missing instrument.
+  [2] ✓ (6w): Only one word of dialogue allowed
+      raw: Only one word of dialogue allowed.
+
+=== Displacement ===
+  [1] ✓ (4w): Whale sings in reverse?
+  [2] ✓ (4w): Mix colors with sounds
+      raw: Mix colors with sounds.
+
+=== Attention ===
+  [1] ✓ (4w): Where is the silence?
+  [2] ✓ (7w): What does "moon" do to your skin?
+
+=== Acceptance ===
+  [1] ✗ domain-assumed (5w): Do not change your story?
+  [2] ✓ (6w): Feel the friction of static electricity
+      raw: Feel the friction of static electricity.
+
+=== Perspective ===
+  [1] ✓ (5w): What would an onion see?
+  [2] ✓ (5w): What would the wind whisper?
+
+=== Time ===
+  [1] ✓ (4w): What's its next step?
+  [2] ✓ (4w): Hold until late night
+      raw: Hold until late night.
+
+=== Reduction ===
+  [1] ✓ (6w): Color palette reduces to three hues
+      raw: Color palette reduces to three hues.
+  [2] ✓ (5w): Flavor to a single note
+      raw: Flavor to a single note.
+
+=== Courage ===
+  [2] ✓ (6w): Step into the room without lights
+      raw: Step into the room without lights.
+
+=== Process ===
+  [1] ✓ (4w): Just observe the patterns
+      raw: Just observe the patterns.
+  [2] ✓ (8w): When does the light switch begin to turn?
+
+=== Reality Check ===
+  [1] ✓ (9w): Repeat the same move several times in a row
+      raw: Repeat the same move several times in a row.
+  [2] ✓ (10w): What is the most unusual object in your current surroundings?
+

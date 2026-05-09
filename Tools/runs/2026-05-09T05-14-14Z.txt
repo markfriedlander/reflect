@@ -1,0 +1,71 @@
+Reflect AFM Harness — 2026-05-09T05-14-14Z
+N per move: 2, pass rate: 18/24
+
+=== Subtraction ===
+  [1] ✓ (4w): Remove everything but numbers
+      raw: Remove everything but numbers.
+  [2] ✓ (4w): Draw an empty room
+      raw: Draw an empty room.
+
+=== Inversion ===
+  [1] ✓ (6w): Imagine reality as an inverted puzzle
+      raw: Imagine reality as an inverted puzzle.
+  [2] ✗ too-long (27w): Imagine this: a dimly lit room with only a single flickering light. It casts a long shadow on the floor. You are standing at the edge of
+
+=== Constraint ===
+  [1] ✓ (9w): Create an entirely new word for a mundane object
+      raw: Create an entirely new word for a mundane object.
+  [2] ✓ (7w): Cook a meal with only 5 ingredients
+      raw: Cook a meal with only 5 ingredients.
+
+=== Displacement ===
+  [1] ✓ (7w): Write a short poem about a cat
+      raw: Write a short poem about a cat.
+  [2] ✓ (4w): Imagine an unlikely collaboration
+      raw: Imagine an unlikely collaboration.
+
+=== Attention ===
+  [1] ✗ too-long (19w): Visualize a blank canvas, but imagine it's covered in a thousand tiny footprints, each left by an unnoticed person
+      raw: Visualize a blank canvas, but imagine it's covered in a thousand tiny footprints, each left by an unnoticed person.
+  [2] ✓ (12w): Imagine an endless sequence of random numbers. Break it down into segments
+      raw: Imagine an endless sequence of random numbers. Break it down into segments.
+
+=== Acceptance ===
+  [1] ✓ (4w): Listen to the silence
+      raw: Listen to the silence.
+  [2] ✓ (3w): Accept all errors
+      raw: Accept all errors.
+
+=== Perspective ===
+  [1] ✗ too-long (13w): Imagine you're a shipwreck survivor on a deserted island. Describe the island's ecosystem
+      raw: Imagine you're a shipwreck survivor on a deserted island. Describe the island's ecosystem.
+  [2] ✗ too-long (24w): Imagine a city without cars, no streets, no roads. How does it function? What is the essential infrastructure that supports human movement and communication?
+
+=== Time ===
+  [1] ✓ (10w): Think of a past experience you wish you could revisit
+      raw: Think of a past experience you wish you could revisit.
+  [2] ✗ too-long (29w): Imagine yourself stranded in a desert with nothing but a compass and a map, knowing the sun will rise and set every day but unable to set foot on
+
+=== Reduction ===
+  [1] ✓ (8w): Stop thinking about the size of your canvas
+      raw: Stop thinking about the size of your canvas.
+  [2] ✓ (4w): Simulate a blank canvas
+      raw: Simulate a blank canvas.
+
+=== Courage ===
+  [1] ✓ (6w): Replace everything with a robotic voice
+      raw: Replace everything with a robotic voice.
+  [2] ✓ (4w): Abandon all preconceived notions
+      raw: Abandon all preconceived notions.
+
+=== Process ===
+  [1] ✓ (7w): Reverse your current task and execute it
+      raw: Reverse your current task and execute it.
+  [2] ✗ too-long (17w): Imagine your work as a river, constantly changing its course. What unexpected detour could this river take?
+
+=== Reality Check ===
+  [1] ✓ (3w): Examine the mundane
+      raw: Examine the mundane.
+  [2] ✓ (8w): Imagine a universe where colors have no shape
+      raw: Imagine a universe where colors have no shape.
+

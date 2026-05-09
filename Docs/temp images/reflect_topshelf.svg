@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="720" viewBox="0 0 1920 720">
+  <defs>
+    <radialGradient id="spark" cx="30%" cy="50%" r="35%" fx="30%" fy="50%">
+      <stop offset="0%"   stop-color="#FFFFFF"  stop-opacity="1.0"/>
+      <stop offset="2%"   stop-color="#EEF4FF"  stop-opacity="1.0"/>
+      <stop offset="6%"   stop-color="#C8DCFF"  stop-opacity="0.85"/>
+      <stop offset="12%"  stop-color="#EEF3FF"  stop-opacity="0.6"/>
+      <stop offset="22%"  stop-color="#F0F4FF"  stop-opacity="0.3"/>
+      <stop offset="38%"  stop-color="#DCE8FF"  stop-opacity="0.1"/>
+      <stop offset="58%"  stop-color="#C8D8F0"  stop-opacity="0.03"/>
+      <stop offset="100%" stop-color="#000000"  stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1920" height="720" fill="#000000"/>
+
+  <circle cx="576" cy="360" r="600" fill="url(#spark)"/>
+
+  <line x1="880" y1="280" x2="880" y2="440"
+        stroke="#C8DCFF" stroke-width="0.75" stroke-opacity="0.5"/>
+
+  <text
+    x="960"
+    y="388"
+    font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
+    font-size="96"
+    font-weight="300"
+    fill="#FFFFFF"
+    letter-spacing="28"
+    text-anchor="start"
+    dominant-baseline="middle">REFLECT</text>
+
+</svg>

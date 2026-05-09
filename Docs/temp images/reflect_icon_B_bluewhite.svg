@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <radialGradient id="sparkB" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%"   stop-color="#FFFFFF"  stop-opacity="1.0"/>
+      <stop offset="1%"   stop-color="#EEF4FF"  stop-opacity="1.0"/>
+      <stop offset="4%"   stop-color="#C8DCFF"  stop-opacity="0.9"/>
+      <stop offset="10%"  stop-color="#A0C0F0"  stop-opacity="0.55"/>
+      <stop offset="22%"  stop-color="#6890CC"  stop-opacity="0.22"/>
+      <stop offset="40%"  stop-color="#3D60A0"  stop-opacity="0.08"/>
+      <stop offset="60%"  stop-color="#1A3060"  stop-opacity="0.03"/>
+      <stop offset="100%" stop-color="#000000"  stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1024" height="1024" fill="#000000"/>
+  <circle cx="512" cy="512" r="512" fill="url(#sparkB)"/>
+</svg>

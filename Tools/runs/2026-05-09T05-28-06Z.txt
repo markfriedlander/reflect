@@ -1,0 +1,91 @@
+Reflect AFM Harness — 2026-05-09T05-28-06Z
+N per move: 3, pass rate: 26/36
+
+=== Subtraction ===
+  [1] ✓ (3w): Listen to silence
+      raw: Listen to silence.
+  [2] ✓ (5w): A silent whisper among shadows
+  [3] ✓ (4w): Remove the middle sound
+      raw: Remove the middle sound.
+
+=== Inversion ===
+  [1] ✓ (7w): Draw a book, but only with words
+      raw: Draw a book, but only with words.
+  [2] ✗ copied-example (4w): Turn it upside down
+      raw: Turn it upside down.
+  [3] ✓ (3w): Feel the pressure
+      raw: Feel the pressure.
+
+=== Constraint ===
+  [1] ✗ too-long (18w): Listen intently to the sound of a distant waterfall. Use this as your guide to create a piece
+      raw: Listen intently to the sound of a distant waterfall. Use this as your guide to create a piece.
+  [2] ✗ too-long (13w): Craft a visual piece using only the colors found in the next scene
+      raw: Craft a visual piece using only the colors found in the next scene.
+  [3] ✓ (4w): Dance with a shadow
+      raw: Dance with a shadow.
+
+=== Displacement ===
+  [1] ✗ banned-word (9w): A wind-swept beach sings ancient songs to wandering souls
+      raw: A wind-swept beach sings ancient songs to wandering souls.
+  [2] ✓ (6w): Carved a tree into a castle
+      raw: Carved a tree into a castle.
+  [3] ✗ domain-assumed (8w): Write a three-dimensional digital sculpture of a dragon
+      raw: Write a three-dimensional digital sculpture of a dragon.
+
+=== Attention ===
+  [1] ✓ (5w): Hear the stillness between clicks
+      raw: Hear the stillness between clicks.
+  [2] ✓ (7w): What's in the shadow of the noise?
+  [3] ✓ (5w): What's the rhythm of stillness?
+
+=== Acceptance ===
+  [1] ✗ multiple-sentences (11w): Choose a mundane object. Study it, touch it, breathe it in
+      raw: Choose a mundane object. Study it, touch it, breathe it in.
+  [2] ✓ (4w): Let unfinished melodies dance
+      raw: Let unfinished melodies dance.
+  [3] ✓ (7w): An unexpected ally appears when least expected
+      raw: An unexpected ally appears when least expected.
+
+=== Perspective ===
+  [1] ✗ copied-example (5w): What would a child say?
+  [2] ✗ too-long (14w): What would a child say about a shadow, with a wild and whimsical imagination?
+  [3] ✗ copied-example (5w): What would a child say?
+
+=== Time ===
+  [1] ✓ (6w): Reflect on the morning before you
+      raw: Reflect on the morning before you.
+  [2] ✓ (5w): Begin with an echoing silence
+      raw: Begin with an echoing silence.
+  [3] ✓ (4w): Chasing shadows of echoes
+      raw: Chasing shadows of echoes.
+
+=== Reduction ===
+  [1] ✓ (3w): Drop the noise
+      raw: Drop the noise.
+  [2] ✓ (6w): A river whispers secrets through reeds
+      raw: A river whispers secrets through reeds.
+  [3] ✓ (8w): Silent moonlight whispers secrets to a sleepy forest
+      raw: Silent moonlight whispers secrets to a sleepy forest.
+
+=== Courage ===
+  [1] ✓ (7w): Discover an unlikely harmony in unexpected sounds
+      raw: Discover an unlikely harmony in unexpected sounds.
+  [2] ✓ (11w): Feel the rhythm of stillness as you create, unbound by limitation
+      raw: Feel the rhythm of stillness as you create, unbound by limitation.
+  [3] ✓ (9w): Build a life where unexpected things are the norm
+      raw: Build a life where unexpected things are the norm.
+
+=== Process ===
+  [1] ✗ multiple-sentences (5w): A. Dance with the shadows
+      raw: A. Dance with the shadows.
+  [2] ✓ (4w): Let the rhythm shift
+      raw: Let the rhythm shift.
+  [3] ✓ (4w): Let the rhythm guide
+      raw: Let the rhythm guide.
+
+=== Reality Check ===
+  [1] ✓ (10w): Focus on the sensation of the surface beneath your feet
+      raw: Focus on the sensation of the surface beneath your feet.
+  [2] ✓ (11w): How do you feel about the weight of your existing ideas?
+  [3] ✓ (3w): What is sound?
+

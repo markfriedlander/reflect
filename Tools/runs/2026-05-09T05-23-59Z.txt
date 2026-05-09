@@ -1,0 +1,83 @@
+Reflect AFM Harness — 2026-05-09T05-23-59Z
+N per move: 3, pass rate: 30/35
+
+=== Subtraction ===
+  [1] ✓ (4w): Silent storm without sound
+      raw: Silent storm without sound.
+  [2] ✓ (4w): Identify the negative trait
+      raw: Identify the negative trait.
+  [3] ✓ (12w): Put on headphones and concentrate on the sound of your own breath
+      raw: Put on headphones and concentrate on the sound of your own breath.
+
+=== Inversion ===
+  [1] ✓ (6w): What if you stopped feeling lost?
+  [2] ✓ (9w): Write about the most mundane thing in your life
+      raw: Write about the most mundane thing in your life.
+  [3] ✓ (5w): Put the idea on paper
+      raw: Put the idea on paper.
+
+=== Constraint ===
+  [1] ✓ (4w): Mix rhythm and color
+  [2] ✗ multiple-sentences (9w): Find a familiar object. Describe it in unusual detail
+      raw: Find a familiar object. Describe it in unusual detail.
+  [3] ✓ (5w): Rearrange the room while blindfolded
+
+=== Displacement ===
+  [1] ✓ (8w): Draw a blank page, then write a sentence
+      raw: Draw a blank page, then write a sentence.
+  [2] ✓ (3w): Change the genre
+      raw: Change the genre.
+  [3] ✗ too-short (1w): Pause
+      raw: Pause.
+
+=== Attention ===
+  [1] ✓ (12w): Watch the dance of shadows, listen to the whispers of the night
+      raw: Watch the dance of shadows, listen to the whispers of the night.
+  [2] ✓ (5w): Notice where the laughter skips
+  [3] ✓ (6w): What's the surface beneath the surface?
+
+=== Acceptance ===
+  [1] ✓ (4w): Do not expect anything
+      raw: Do not expect anything.
+  [2] ✓ (6w): Begin with the sound of silence
+      raw: Begin with the sound of silence.
+  [3] ✓ (4w): Draw with a smile
+
+=== Perspective ===
+  [1] ✓ (5w): What would a child say?
+  [2] ✓ (5w): What would a child say?
+  [3] ✓ (5w): What would a child say?
+
+=== Time ===
+  [1] ✓ (3w): What exists between?
+  [2] ✗ multiple-sentences (10w): The sun sets on a crowded beach. What's the soundtrack?
+  [3] ✓ (5w): What will the crowd say?
+
+=== Reduction ===
+  [1] ✓ (3w): Make one sentence
+      raw: Make one sentence.
+  [2] ✓ (6w): Change your environment to a desert
+      raw: Change your environment to a desert.
+  [3] ✓ (6w): Make the bird only its wings
+      raw: Make the bird only its wings.
+
+=== Courage ===
+  [2] ✓ (4w): Step outside the box
+      raw: Step outside the box.
+  [3] ✓ (4w): Listen to the rustle
+      raw: Listen to the rustle.
+
+=== Process ===
+  [1] ✓ (3w): Focus on form
+      raw: Focus on form.
+  [2] ✗ too-long (15w): Create a story about a character who unexpectedly travels back in time to their youth
+      raw: Create a story about a character who unexpectedly travels back in time to their youth.
+  [3] ✓ (3w): Disrupt ordinary rhythms
+      raw: Disrupt ordinary rhythms.
+
+=== Reality Check ===
+  [1] ✓ (8w): What does the opposite of this look like?
+  [2] ✓ (6w): What are you feeling about this?
+  [3] ✗ too-short (1w): Soundtrack
+      raw: Soundtrack.
+

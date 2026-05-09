@@ -1,0 +1,87 @@
+Reflect AFM Harness — 2026-05-09T05-34-03Z
+N per move: 3, pass rate: 27/36
+
+=== Subtraction ===
+  [1] ✓ (7w): Only one scent, for an entire room
+      raw: Only one scent, for an entire room.
+  [2] ✓ (6w): Fill the empty space with noise
+      raw: Fill the empty space with noise.
+  [3] ✗ too-short (2w): Reverse it
+      raw: Reverse it.
+
+=== Inversion ===
+  [1] ✓ (3w): Change the direction
+      raw: Change the direction.
+  [2] ✗ domain-assumed (9w): Use a bowl of water to sculpt a sculpture
+      raw: Use a bowl of water to sculpt a sculpture.
+  [3] ✓ (4w): Delve into the ordinary
+      raw: Delve into the ordinary.
+
+=== Constraint ===
+  [1] ✓ (3w): Keep it alive
+      raw: Keep it alive.
+  [2] ✗ too-short (2w): Reverse it
+      raw: Reverse it.
+  [3] ✓ (3w): Consider only sounds
+      raw: Consider only sounds.
+
+=== Displacement ===
+  [1] ✓ (4w): Reverse the cause-and-effect sequence
+      raw: Reverse the cause-and-effect sequence.
+  [2] ✓ (7w): Relate to a clock without a face
+      raw: Relate to a clock without a face.
+  [3] ✗ domain-assumed (3w): Reverse the melody
+
+=== Attention ===
+  [1] ✓ (3w): Reverse its rhythm
+      raw: Reverse its rhythm.
+  [2] ✓ (4w): Find the secret angle
+      raw: Find the secret angle.
+  [3] ✓ (6w): What color does it have no?
+
+=== Acceptance ===
+  [1] ✓ (10w): Construct a new creation where the unknown leads the way
+      raw: Construct a new creation where the unknown leads the way.
+  [2] ✗ domain-assumed (6w): Make a melody with random notes
+      raw: Make a melody with random notes.
+  [3] ✗ too-short (2w): Embrace uncertainty
+      raw: Embrace uncertainty.
+
+=== Perspective ===
+  [1] ✓ (5w): Inquire about the silence's power
+      raw: Inquire about the silence's power.
+  [2] ✓ (6w): What would a forgotten thought do?
+  [3] ✗ too-short (2w): Reverse it
+      raw: Reverse it.
+
+=== Time ===
+  [1] ✓ (3w): Reverse its orbit
+  [2] ✗ too-short (2w): Reverse it
+  [3] ✓ (3w): Reimagine its beginning
+      raw: Reimagine its beginning.
+
+=== Reduction ===
+  [1] ✓ (9w): Reverse the order of the words in this sentence
+      raw: Reverse the order of the words in this sentence.
+  [2] ✗ too-short (2w): Reverse it
+      raw: Reverse it.
+  [3] ✓ (5w): What's the sound of silence?
+
+=== Courage ===
+  [1] ✓ (5w): What's the sound of silence?
+  [2] ✓ (9w): What if you never wanted to leave your bed?
+  [3] ✓ (11w): What if you combined sound and silence into a new medium?
+
+=== Process ===
+  [1] ✓ (3w): Reverse its surface
+      raw: Reverse its surface.
+  [2] ✓ (4w): Use only a crayon
+      raw: Use only a crayon.
+  [3] ✓ (10w): Reverse the scene by adding a character you don’t remember
+      raw: Reverse the scene by adding a character you don’t remember.
+
+=== Reality Check ===
+  [1] ✓ (3w): Is it incomplete?
+  [2] ✓ (4w): What is its heartbeat?
+  [3] ✓ (6w): What is the opposite of this?
+
