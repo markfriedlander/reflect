@@ -613,3 +613,13 @@ Timestamp               Ty Process[PID:TID]
 2026-05-10 22:55:59.189 Db Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
 2026-05-10 22:59:12.530 I  Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:engine] card #9 [curated] [Acceptance] Make it feel accidental
 2026-05-10 22:59:12.602 Db Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 23:04:04.095 I  Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Constraint] Use only what's already here
+2026-05-10 23:04:04.135 Db Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 23:07:35.914 I  Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:engine] card #11 [curated] [Reality Check] What are you avoiding?
+2026-05-10 23:07:35.935 Db Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 23:16:24.802 I  Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:engine] card #12 [curated] [Subtraction] Remove the expected
+2026-05-10 23:16:24.842 Db Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 23:20:57.670 I  Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:engine] card #13 [curated] [Courage] Resurrect something
+2026-05-10 23:20:57.712 Db Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 23:24:16.392 I  Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:engine] card #14 [curated] [Inversion] Tell the emotional lie
+2026-05-10 23:24:16.437 Db Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false

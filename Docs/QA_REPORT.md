@@ -205,24 +205,79 @@ selects advanced 5 cards across 5 different moves. Engine log evidence:
 - Card #6: Attention / Listen to the hum beneath the noise
 - Card #7: Time / Walk backward into the future
 
-### Mac runtime — verified build, NOT verified runtime
-**Honest:** I tried 5 different approaches to launch the iPhone-binary
-on Mac from CLI. All failed. Apple has architecturally restricted iOS
-apps running on Mac to Xcode's GUI Run flow or Mac App Store install:
-- `xcodebuild build` for the macOS,variant=Designed for iPad
-  destination: ✅ succeeds (config correct)
-- `open Reflect.app` on the iphoneos product: ✗ "incorrect executable format"
-- `lsregister -f` + `open -b com.MarkFriedlander.Reflect`: ✗ LaunchServices
+### Mac runtime — VERIFIED end-to-end
+
+**Method.** Two separate steps. The build is plain `xcodebuild`; the
+launch is `osascript` to Xcode. This is the documented path for the
+iOS-on-Mac runtime — there's no `xcodebuild`-only invocation that
+produces a launchable Mac wrapper.
+
+**Compile check** (fast, no GUI involvement):
+
+```sh
+xcodebuild build \
+  -project Reflect.xcodeproj \
+  -scheme Reflect \
+  -destination "id=00008112-0010193C3A88C01E" \
+  -configuration Debug \
+  2>&1 | grep -E "error:|BUILD SUCCEEDED|BUILD FAILED"
+```
+
+The `id=…` is the Mac's hardware UUID (visible via
+`xcodebuild -showdestinations` as `name: My Mac`). Using the UDID
+form rather than `platform=macOS,variant=Designed for iPad` also
+seeds Xcode's implicit "last destination" so the launch step picks
+the right target without further configuration.
+
+**Launch** (only when you want to see / interact with the app on Mac):
+
+```sh
+osascript -e 'tell application "Xcode"
+    stop active workspace document
+    delay 2
+    run active workspace document
+end tell'
+```
+
+Xcode wraps the iOS `.app` into a system-managed bundle at
+`/private/var/folders/.../X/<uuid>/d/Wrapper/Reflect.app` and launches
+it through the iOS-on-Mac runtime. The result is a normal Mac process
+with a normal Mac window (traffic-light chrome, mouse-input capable).
+Note: `run active workspace document` is parsed correctly by AppleScript
+in this noun-phrase form. (My earlier attempts to set the destination
+via a `«event xcoderun» … given «class rdsp»:…` raw-event call also
+worked but were uglier; this is cleaner.)
+
+**Why split build from launch?** Most QA checks are "does it still
+compile" — that's just `xcodebuild build`, no Xcode round-trip, fast.
+Reserve the AppleScript launch for moments you actually need to see /
+interact with the Mac runtime.
+
+**Evidence from this session:**
+
+| Check | Result |
+|---|---|
+| `xcodebuild build` with Mac UDID destination | ✅ BUILD SUCCEEDED |
+| Process launches | ✅ pid 73000, state `S` (running), CPU steady |
+| Window renders | ✅ Screenshot: title bar "Reflect: Creative Sparks", black bg, white text, first card *"Let the work lead"* (Process) |
+| Mouse click advances card | ✅ Click at center → card changes to *"Ask the question you keep not asking"* |
+| Bundle ID resolves | ✅ `osascript -e 'tell application id "com.MarkFriedlander.Reflect" to activate'` brings to front |
+
+**What didn't work** (preserved so we don't try them again):
+- `open Reflect.app` on the raw iphoneos product → "incorrect executable
+  format" (binary is `LC_BUILD_VERSION platform=2` = iOS; LaunchServices
+  refuses without the Mac wrapper)
+- `xcodebuild archive` for the Mac variant → "no destinations allow archive"
+- `lsregister -f` + `open -b com.MarkFriedlander.Reflect` → LaunchServices
   can't find the bundle (iOS .app isn't registered for Mac launch)
-- `xcodebuild archive` for Mac variant: ✗ "no destinations allow archive"
-- Searched filesystem for any iOS-on-Mac launcher tool in Xcode bundle: nothing public
+- The intermediate wrapped .app at
+  `~/.../DerivedData/.../.XCInstall/Reflect.app/Wrapper/Reflect.app`
+  can't be `open`ed either — only Xcode's system-staged wrapper works
+- `xcrun devicectl device process launch` with the Mac UDID → "specified
+  device was not found" (devicectl doesn't know about local Mac as a target)
 
-**Mark's final-check step:** Xcode → scheme menu → "My Mac (Designed
-for iPhone)" → Run button. Build config is verified correct
-(`SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES`), so the GUI run should
-just work.
-
-This is a genuine tooling limit, not an incomplete test.
+There is no documented CLI path that bypasses Xcode's run action for
+the iOS-on-Mac runtime. AppleScript-to-Xcode is the right method.
 
 ## Things I did not test (and why)
 

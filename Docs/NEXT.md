@@ -13,15 +13,17 @@ in the **Reflect TV** target's Signing & Capabilities. Will require
 generating new provisioning profile.
 
 ### 2. Real-device test pass
-- iPhone 15 Pro+ with Apple Intelligence enabled — verify AFM buffer
-  fills correctly and generated prompts feel indistinguishable from
-  curated ones.
+- iPhone 16 Plus AFM — **verified** during QA pass (see QA_REPORT.md).
+  No further action needed unless you want to re-test after any AFM
+  prompt or validator changes.
+- Mac runtime — **verified** via `./Tools/mac_run.sh run`. Full-screen
+  toggle and longer-session feel are still worth a real sit-with.
 - iPad — verify identical iPhone behavior at iPad layout.
-- Mac (via iPhone & iPad Apps on Mac) — verify full-screen mode.
-- Apple TV — sit with ambient mode for an hour. Does the variable
-  dwell feel right? Adjust constants in
+- Apple TV — sit with ambient mode for an hour on real hardware. Does
+  the variable dwell feel right? Adjust constants in
   `tvOS/TVContentView.swift#nextDwellSeconds()` if not.
-- Apple Watch — tap behavior, haptic, no accidental advances.
+- Apple Watch — tap behavior + haptic on real wrist (sim verified the
+  call fires; only your wrist tells you if it feels right).
 
 ### 3. Accent color decision
 Currently no accent (pure typography). Strategic Claude proposed a dim

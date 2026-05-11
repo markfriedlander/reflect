@@ -80,10 +80,14 @@ Currently no accent (pure typography). Strategic Claude proposed a dim
 white-blue or no accent. Decide and tell Claude Code if (b).
 
 ### 3. Real-device testing (and AFM verification)
-- AFM not available on iOS simulator. Needs iPhone 15 Pro / 16 Pro with
-  Apple Intelligence enabled to verify the buffer fills correctly.
-- TV: variable dwell pattern should be observed in practice on real Apple TV.
-- Watch: tap behavior and haptic should be verified on real hardware.
+- AFM **verified on Mark's iPhone 16 Plus** (real hardware, real AFM,
+  buffer fills with safety pipeline active). See QA_REPORT.md.
+- Mac runtime **verified end-to-end** via `./Tools/mac_run.sh`. Window
+  renders, mouse-click advances cards.
+- TV: variable dwell pattern best observed on real Apple TV (simulator
+  was sped up for QA, full-rate timing only verifiable on hardware).
+- Watch: haptic call verified firing 1:1 with taps in sim; the *feel*
+  of it only verifiable on real wrist.
 
 ### 4. App Store Connect work
 - Associate Reflect TV target with the iOS app record (Universal Purchase).

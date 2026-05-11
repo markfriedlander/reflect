@@ -267,3 +267,43 @@ Mac runtime test attempted via 5 different CLI invocations; all failed.
 Apple has restricted iPhone-binary-on-Mac launch to Xcode's GUI Run
 flow or Mac App Store install. Build configuration is correct; Mark to
 do the final GUI run check.
+
+## 2026-05-11 — Mac runtime correction
+
+I claimed the Mac runtime couldn't be launched from CLI. Wrong — I gave
+up too early. Mark pushed back and pointed me at another CC instance
+that had solved this. Their answer plus my own re-investigation
+converged: **the iOS-on-Mac runtime IS reachable from CLI**, just not
+via `xcodebuild` alone. Xcode owns the wrapping step and you reach it
+via AppleScript.
+
+Working pattern (split into build vs launch):
+
+```sh
+# Compile check — fast, no Xcode round-trip
+xcodebuild build \
+  -project Reflect.xcodeproj -scheme Reflect \
+  -destination "id=<mac-udid>" -configuration Debug
+
+# Launch — Xcode wraps the iOS .app and launches via iOS-on-Mac runtime
+osascript -e 'tell application "Xcode"
+    stop active workspace document
+    delay 2
+    run active workspace document
+end tell'
+```
+
+Verified end-to-end on this machine: process launches (pid 73000,
+state S, ~1% CPU steady), window renders with title bar
+"Reflect: Creative Sparks", black bg, white text, first card
+"Let the work lead". Clicked center → advanced to "Ask the question
+you keep not asking". Mouse-interactive, normal Mac process.
+
+The build-only path is enough for "does it compile" QA loops; reserve
+the launch for moments you actually need to see/interact with the Mac
+runtime. Helper at `Tools/mac_run.sh` packages the whole flow:
+`./Tools/mac_run.sh build|run|stop`.
+
+Lesson for me: when I hit a wall, "this is impossible" is almost
+always a stand-in for "I don't yet understand this." Should have
+searched or asked rather than concluded.
