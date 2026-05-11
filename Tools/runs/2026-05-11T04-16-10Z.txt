@@ -1,0 +1,88 @@
+Reflect AFM Harness — 2026-05-11T04-16-10Z
+N per move: 3, pass rate: 29/36
+
+=== Subtraction ===
+  [1] ✓ (3w): Remove its outline
+      raw: Remove its outline.
+  [2] ✓ (11w): What happens when you remove the only thing in its place?
+  [3] ✓ (3w): Reverse its rhythm
+      raw: Reverse its rhythm.
+
+=== Inversion ===
+  [1] ✗ too-short (2w): Reverse it
+      raw: Reverse it.
+  [2] ✓ (4w): Play with its reverse
+      raw: Play with its reverse.
+  [3] ✓ (4w): What is its sound?
+
+=== Constraint ===
+  [1] ✓ (10w): Rearrange the clock faces so they tell the wrong time
+      raw: Rearrange the clock faces so they tell the wrong time.
+  [2] ✓ (3w): Swim in water
+      raw: Swim in water.
+  [3] ✓ (5w): Replace all verbs with nouns
+      raw: Replace all verbs with nouns.
+
+=== Displacement ===
+  [1] ✓ (3w): Reverse the narrative
+      raw: Reverse the narrative.
+  [2] ✗ too-short (2w): Reverse it
+      raw: Reverse it.
+  [3] ✓ (6w): Invent a dance composed of silence
+      raw: Invent a dance composed of silence.
+
+=== Attention ===
+  [1] ✗ too-short (2w): Reverse it
+      raw: Reverse it.
+  [2] ✓ (7w): Disassemble your usual toolkit and rebuild it
+      raw: Disassemble your usual toolkit and rebuild it.
+  [3] ✓ (3w): Touch the sound
+      raw: Touch the sound.
+
+=== Acceptance ===
+  [1] ✗ multiple-sentences (6w): Begin with confusion. End with resolution
+      raw: Begin with confusion. End with resolution.
+  [2] ✓ (3w): Blend the unexpected
+  [3] ✓ (7w): What lies between the lines of silence?
+
+=== Perspective ===
+  [1] ✓ (4w): What if gravity flipped?
+  [2] ✓ (10w): Create a silent symphony using the echoes of abandoned corridors
+      raw: Create a silent symphony using the echoes of abandoned corridors.
+  [3] ✓ (5w): Consider a clock without numbers
+      raw: Consider a clock without numbers.
+
+=== Time ===
+  [1] ✓ (5w): Reverse a piece of writing
+      raw: Reverse a piece of writing.
+  [2] ✓ (5w): Use it as a bookmark
+      raw: Use it as a bookmark.
+  [3] ✓ (6w): A ghost of a phone lingers
+      raw: A ghost of a phone lingers.
+
+=== Reduction ===
+  [1] ✓ (3w): Reverse the movement
+      raw: Reverse the movement.
+  [2] ✓ (9w): What is the most simple version of a laugh?
+  [3] ✓ (4w): Reverse the entire composition
+      raw: Reverse the entire composition.
+
+=== Courage ===
+  [1] ✗ domain-assumed (6w): Create a melody with a drum
+      raw: Create a melody with a drum.
+  [2] ✓ (3w): Reverse the image
+      raw: Reverse the image.
+  [3] ✗ domain-assumed (4w): Find the hidden song
+      raw: Find the hidden song.
+
+=== Process ===
+  [1] ✓ (3w): Tape the tape
+  [2] ✓ (3w): What's its shadow?
+  [3] ✗ domain-assumed (6w): Adopt a color palette of tomorrow
+      raw: Adopt a color palette of tomorrow.
+
+=== Reality Check ===
+  [1] ✓ (5w): What is its mirror image?
+  [2] ✓ (9w): What was it like to do nothing at all?
+  [3] ✓ (5w): What is your next move?
+

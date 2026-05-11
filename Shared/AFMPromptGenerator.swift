@@ -27,6 +27,9 @@
 //     and discourage rambling.
 //   - SystemLanguageModel.default.isAvailable — Bool gate.
 //
+//  System prompt tuned via the Tools/AFMHarness.swift iteration loop
+//  (6 rounds, real macOS 26 AFM output). Tuning notes in HISTORY.md.
+//
 //  Compiles on systems without the FoundationModels framework via
 //  canImport — on those builds (tvOS, watchOS, older Macs), isAvailable
 //  is false forever and takeNext() always returns nil.
@@ -47,43 +50,137 @@ final class AFMPromptGenerator {
     private static let maxRetriesPerSlot = 3
     private static let temperature: Double = 0.9
     private static let maximumResponseTokens: Int = 30
-
-    private static let bannedWords: Set<String> = [
-        "journey", "transform", "embrace", "soul", "authentic",
-        "growth", "heal", "manifest", "radical", "surrender", "self-care"
-    ]
+    private static let examplesPerCall = 4
 
     // MARK: - State
 
     private var buffer: [PromptCard] = []
     private var isRefilling = false
 
-    // MARK: - System prompt
+    /// Per-move pool of example prompts, built from the curated library at
+    /// init time. A random subset is sampled into the system prompt on each
+    /// generation so the model can't fixate on copying any single example.
+    private let examplePools: [Move: [String]]
 
-    private static let baseSystemPrompt = """
-    You generate creative prompts for a tool called Reflect. These prompts are inspired by Brian Eno and Peter Schmidt's Oblique Strategies — a deck of cards designed to break creative blocks through lateral thinking.
+    // MARK: - Init
 
-    Your prompts must follow these rules:
+    init(library: [PromptCard] = curatedPrompts) {
+        var pools: [Move: [String]] = [:]
+        for move in Move.allCases {
+            pools[move] = library
+                .filter { $0.moves.contains(move) }
+                .map(\.text)
+        }
+        self.examplePools = pools
+    }
 
-    RULES:
-    1. Each prompt uses exactly one of these 12 structural moves: Subtraction, Inversion, Constraint, Displacement, Attention, Acceptance, Perspective, Time, Reduction, Courage, Process, or Reality Check.
-    2. Do not name the move in the output. The move is the hidden structure, not the content.
-    3. Length: 3 to 9 words. Shorter is almost always better.
-    4. Voice: oblique, not direct. Suggest a direction, never issue an order.
-    5. Never use: "journey", "transform", "embrace", "soul", "authentic", "growth", "heal", "manifest", "radical", "surrender", "self-care", or any therapy/wellness vocabulary.
-    6. Never be encouraging or motivational. The prompt is not a coach. It is a disruptor.
-    7. The prompt should feel unexpected. If it sounds like something from a motivational poster, discard it and try again.
-    8. Domain-agnostic: the prompt should work for a musician, a painter, a writer, a software engineer, a chef. Never assume a domain.
+    // MARK: - Move semantics
+    //
+    // What each move actually does. Included in the system prompt so the
+    // model understands the meaning of the move, not just the surface form
+    // of its example outputs.
 
-    OUTPUT FORMAT:
-    Return only the prompt text. No punctuation at the end unless it is a question mark. No quotation marks. No explanation.
-    """
+    private static let moveSemantics: [Move: String] = [
+        .subtraction:  "Remove something. Strip to essence. What remains when you take the obvious away?",
+        .inversion:    "Flip the polarity. Run it backward. Do the opposite of what seems right.",
+        .constraint:   "Impose an arbitrary rule that closes the obvious path and forces a new one.",
+        .displacement: "Move the problem sideways into a different medium, domain, speed, or scale.",
+        .attention:    "Direct focus to what's being ignored, avoided, or taken for granted.",
+        .acceptance:   "Reframe a perceived problem as a resource. Work with what's actually there.",
+        .perspective:  "Inhabit a genuinely alien point of view. A complete transplant, not a slight shift.",
+        .time:         "Disrupt the temporal relationship to the work. Change when you are in it.",
+        .reduction:    "Find the smallest irreducible unit. Make just one thing. Work only from there.",
+        .courage:      "Remove the permission-seeking. Dissolve hesitation. Do the avoided thing.",
+        .process:      "Dissolve perfectionism by focusing on motion rather than destination.",
+        .realityCheck: "Cut through abstraction. Look at what's actually there. Name the real thing.",
+    ]
+
+    // MARK: - Banned vocabulary
+
+    private static let bannedWords: Set<String> = [
+        "journey", "transform", "embrace", "soul", "authentic",
+        "growth", "heal", "manifest", "radical", "surrender", "self-care"
+    ]
+
+    /// Tokens that name a single creative medium and therefore violate the
+    /// domain-agnostic rule (rule #8 in the system prompt).
+    private static let domainWords: Set<String> = [
+        "poem", "poetry", "song", "novel", "story", "paragraph", "stanza", "chapter", "essay",
+        "canvas", "painting", "paint", "sketch", "sculpture", "palette", "brush", "ink", "page",
+        "meal", "dish", "recipe", "ingredients", "ingredient", "flavor",
+        "code", "function", "algorithm", "program", "script",
+        "melody", "chord", "lyric", "lyrics", "instrument", "drum", "symphony", "composition",
+        "writing", "narrative", "manuscript", "draft",
+        "drawing", "drawings", "photograph"
+    ]
+
+    /// Multi-word clichés the model reaches for when uncertain.
+    private static let clicheTokens: [String] = [
+        "step outside the box",
+        "think outside the box",
+        "push your boundaries",
+        "find your voice",
+        "follow your bliss",
+        "get out of your comfort zone",
+        "trust the process"
+    ]
+
+    // MARK: - System prompt builder
+
+    private func buildSystemPrompt(for move: Move, examples: [String]) -> String {
+        let exampleBlock = examples.map { "- \($0)" }.joined(separator: "\n")
+        let semantics = Self.moveSemantics[move] ?? ""
+
+        return """
+        You write single-line creative prompts in the style of Brian Eno and Peter Schmidt's Oblique Strategies — short, oblique cards that disrupt a creative person's habitual thinking. The prompts work for any creative discipline (music, visual art, writing, software, cooking, design).
+
+        THIS PROMPT MUST EMBODY THE "\(move.rawValue)" MOVE.
+        What that means: \(semantics)
+        A reader should be able to feel that semantic in the prompt without being told the move name.
+
+        FORM: A prompt is almost always one of two things:
+        - A short directive starting with a verb ("Take one part away", "Use the wrong tool")
+        - A short question ("What is its shadow?", "What's hiding in plain sight?")
+        A prompt is NOT a poetic image, NOT a metaphor, NOT a description, NOT a scene.
+
+        Below are reference prompts that use the \(move.rawValue) move. Read them to absorb the voice — then write a DIFFERENT one that captures the same spirit. Do NOT copy. Do NOT paraphrase. Do NOT write a tiny variation. Write something genuinely new.
+
+        Reference (DO NOT reproduce — voice study only):
+        \(exampleBlock)
+
+        Examples of BAD output (never write anything like these):
+        - Write a short poem about a cat (BAD: assumes a creative domain)
+        - Cook a meal with only five ingredients (BAD: assumes a creative domain)
+        - Create a melody with a drum (BAD: assumes a creative domain)
+        - Imagine a universe where colors have no shape (BAD: starts with "Imagine"; abstract not oblique)
+        - A river whispers secrets through reeds (BAD: poetic image, not a directive)
+        - Embrace your authentic creative journey (BAD: motivational vocabulary)
+        - Step outside the box (BAD: cliché)
+        - Reverse it (BAD: too short, too generic; many moves have a "reverse" flavor)
+        - Reverse the narrative / Reverse the composition (BAD: lazy "Reverse X" pattern)
+        - Move: \(move.rawValue) (BAD: echoes the move name)
+
+        Hard rules:
+        1. Length: 3 to 7 words. Hard maximum 9. Count.
+        2. Form: directive or question. Not an image. Not a sentence describing a scene.
+        3. Domain-agnostic. Forbidden: poem, canvas, song, meal, code, story, palette, melody, instrument, chord, brush, lyric, recipe, paint, sculpture, painting, novel, paragraph, ink, page, drum, symphony, composition, writing, narrative, drawing.
+        4. No motivational/wellness words: journey, transform, embrace, soul, authentic, growth, heal, manifest, radical, surrender, self-care.
+        5. No clichés ("step outside the box", "think outside the box", "trust the process").
+        6. Do not start with "Imagine".
+        7. Do not name or echo the move ("\(move.rawValue)").
+        8. Do not copy any reference prompt. Do not write a near-trivial variation.
+        9. Output ONLY the prompt text — no quotation marks, no labels, no preamble, no bullet, no number.
+        10. No terminal punctuation except "?" if it's a question.
+
+        Now write ONE new \(move.rawValue) prompt — 3 to 7 words, directive or question, that captures: \(semantics)
+        """
+    }
 
     // MARK: - Availability
 
     static var isAvailable: Bool {
         #if canImport(FoundationModels)
-        if #available(iOS 17.0, macOS 14.0, *) {
+        if #available(iOS 26.0, macOS 26.0, *) {
             return SystemLanguageModel.default.isAvailable
         }
         return false
@@ -114,42 +211,48 @@ final class AFMPromptGenerator {
         let curatedTexts = avoidingTexts
 
         Task(priority: .background) { [weak self] in
+            guard let self else { return }
             for _ in 0..<needed {
-                if let card = await Self.generateOne(
+                if let card = await self.generateOne(
                     avoidingMoves: recentMoves,
                     avoidingTexts: curatedTexts
                 ) {
-                    self?.buffer.append(card)
+                    self.buffer.append(card)
                 }
             }
-            self?.isRefilling = false
+            self.isRefilling = false
         }
     }
 
     // MARK: - Generation
 
-    private static func generateOne(
+    private func generateOne(
         avoidingMoves recentMoves: [Move],
         avoidingTexts curatedTexts: Set<String>
     ) async -> PromptCard? {
         #if canImport(FoundationModels)
-        guard #available(iOS 17.0, macOS 14.0, *) else { return nil }
+        guard #available(iOS 26.0, macOS 26.0, *) else { return nil }
 
         let candidates = Move.allCases.filter { !recentMoves.contains($0) }
         let move = candidates.randomElement() ?? Move.allCases.randomElement()!
-        let instructions = baseSystemPrompt + "\n\nMOVE TO USE THIS TIME: " + move.rawValue
-        let userPrompt = "Generate one prompt now."
+
+        let pool = examplePools[move] ?? []
+        let examples = Array(pool.shuffled().prefix(Self.examplesPerCall))
+        let instructions = buildSystemPrompt(for: move, examples: examples)
+        let userPrompt = "Write the prompt now."
+
         let options = GenerationOptions(
-            temperature: temperature,
-            maximumResponseTokens: maximumResponseTokens
+            sampling: nil,
+            temperature: Self.temperature,
+            maximumResponseTokens: Self.maximumResponseTokens
         )
 
-        for _ in 0..<maxRetriesPerSlot {
+        for _ in 0..<Self.maxRetriesPerSlot {
             do {
                 let session = LanguageModelSession(instructions: instructions)
                 let response = try await session.respond(to: userPrompt, options: options)
-                let text = clean(response.content)
-                if validate(text: text, avoidingTexts: curatedTexts) {
+                let text = Self.clean(response.content)
+                if Self.validate(text: text, curatedTexts: curatedTexts) {
                     return PromptCard(text, move)
                 }
             } catch {
@@ -163,12 +266,19 @@ final class AFMPromptGenerator {
         #endif
     }
 
-    // MARK: - Validation
+    // MARK: - Cleaning + validation
 
     /// Trim whitespace, strip wrapping quotes, drop terminal punctuation
     /// other than '?'. The model occasionally adds these despite the rules.
     private static func clean(_ raw: String) -> String {
         var text = raw.trimmingCharacters(in: .whitespacesAndNewlines)
+
+        // Strip leading list-bullet artifacts ("1. ", "- ", "* ").
+        let prefixesToStrip = ["- ", "* ", "1. ", "2. ", "3. "]
+        for p in prefixesToStrip where text.hasPrefix(p) {
+            text.removeFirst(p.count)
+        }
+
         if let first = text.first, first == "\"" || first == "\u{201C}" {
             text.removeFirst()
         }
@@ -181,15 +291,46 @@ final class AFMPromptGenerator {
         return text.trimmingCharacters(in: .whitespacesAndNewlines)
     }
 
-    private static func validate(text: String, avoidingTexts: Set<String>) -> Bool {
+    private static func validate(text: String, curatedTexts: Set<String>) -> Bool {
         guard !text.isEmpty else { return false }
         let wordCount = text.split(whereSeparator: { $0.isWhitespace }).count
         guard (3...12).contains(wordCount) else { return false }
-        if avoidingTexts.contains(text) { return false }
+
         let lower = text.lowercased()
+
+        // Starts-with-"Imagine" is the model's most common drift pattern.
+        if lower.hasPrefix("imagine ") { return false }
+
+        // Multiple sentences = the model wrote prose, not a card.
+        if text.contains(". ") || text.contains("; ") { return false }
+
+        // Banned vocabulary (motivational/wellness).
         for banned in bannedWords where lower.contains(banned) {
             return false
         }
+
+        // The model occasionally names the move it was given.
+        let moveNames = ["subtraction", "inversion", "constraint", "displacement",
+                         "attention", "acceptance", "perspective",
+                         "reduction", "courage", "process", "reality check"]
+        for name in moveNames where lower.contains(name) {
+            return false
+        }
+
+        // Domain-agnostic check — reject if it names a single creative medium.
+        let tokens = Set(lower.split(whereSeparator: { !$0.isLetter }).map(String.init))
+        for domain in domainWords where tokens.contains(domain) {
+            return false
+        }
+
+        // Multi-word cliché check.
+        for cliche in clicheTokens where lower.contains(cliche) {
+            return false
+        }
+
+        // Dedupe against the entire curated library (whatever the engine passed).
+        if curatedTexts.contains(text) { return false }
+
         return true
     }
 }

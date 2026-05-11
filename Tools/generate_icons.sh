@@ -1,0 +1,136 @@
+#!/usr/bin/env bash
+# generate_icons.sh — render all required PNG icon assets from the locked
+# SVG sources (reflect_icon_C_blend.svg, reflect_topshelf.svg).
+#
+# Requires: librsvg (brew install librsvg). Produces PNGs directly into
+# the Xcode asset catalogs for each target.
+
+set -euo pipefail
+
+ICON_SVG="Docs/temp images/reflect_icon_C_blend.svg"
+TOPSHELF_SVG="Docs/temp images/reflect_topshelf.svg"
+IOS_OUT="Reflect/Assets.xcassets/AppIcon.appiconset"
+WATCH_OUT="Reflect Watch Watch App/Assets.xcassets/AppIcon.appiconset"
+TV_BRAND="Reflect TV/Assets.xcassets/App Icon & Top Shelf Image.brandassets"
+
+# Sanity
+command -v rsvg-convert >/dev/null || { echo "rsvg-convert required (brew install librsvg)"; exit 1; }
+[ -f "$ICON_SVG" ] || { echo "missing $ICON_SVG"; exit 1; }
+[ -f "$TOPSHELF_SVG" ] || { echo "missing $TOPSHELF_SVG"; exit 1; }
+
+# Helper: render square icon at given pixel size
+render_square() {
+    local size="$1" out="$2"
+    rsvg-convert -w "$size" -h "$size" "$ICON_SVG" -o "$out"
+}
+
+# Helper: render a tvOS wide icon. The icon SVG is square; we wrap it in a
+# black canvas of target width/height and center the spark vertically.
+render_wide_icon() {
+    local w="$1" h="$2" out="$3"
+    local tmp_svg="$(mktemp -t reflect_wide_XXXXXX).svg"
+    local cx=$((w / 2)) cy=$((h / 2)) r=$((h / 2))
+    cat > "$tmp_svg" <<EOF
+<svg xmlns="http://www.w3.org/2000/svg" width="$w" height="$h" viewBox="0 0 $w $h">
+  <defs>
+    <radialGradient id="sparkC" cx="$cx" cy="$cy" r="$r" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#FFFFFF"  stop-opacity="1.0"/>
+      <stop offset="2%"   stop-color="#EEF4FF"  stop-opacity="1.0"/>
+      <stop offset="6%"   stop-color="#C8DCFF"  stop-opacity="0.85"/>
+      <stop offset="12%"  stop-color="#EEF3FF"  stop-opacity="0.6"/>
+      <stop offset="22%"  stop-color="#F0F4FF"  stop-opacity="0.3"/>
+      <stop offset="38%"  stop-color="#DCE8FF"  stop-opacity="0.1"/>
+      <stop offset="58%"  stop-color="#C8D8F0"  stop-opacity="0.03"/>
+      <stop offset="100%" stop-color="#000000"  stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="$w" height="$h" fill="#000000"/>
+  <circle cx="$cx" cy="$cy" r="$r" fill="url(#sparkC)"/>
+</svg>
+EOF
+    rsvg-convert -w "$w" -h "$h" "$tmp_svg" -o "$out"
+    rm -f "$tmp_svg"
+}
+
+# Helper: render top shelf wide by padding the 1920x720 design horizontally
+# to 2320x720 with black on both sides.
+render_topshelf_wide() {
+    local out="$1"
+    local tmp_svg="$(mktemp -t reflect_topshelf_wide_XXXXXX).svg"
+    # 2320 - 1920 = 400 total padding, 200 each side. Shift everything right by 200.
+    cat > "$tmp_svg" <<'EOF'
+<svg xmlns="http://www.w3.org/2000/svg" width="2320" height="720" viewBox="0 0 2320 720">
+  <defs>
+    <radialGradient id="spark" cx="30%" cy="50%" r="29%" fx="30%" fy="50%">
+      <stop offset="0%"   stop-color="#FFFFFF"  stop-opacity="1.0"/>
+      <stop offset="2%"   stop-color="#EEF4FF"  stop-opacity="1.0"/>
+      <stop offset="6%"   stop-color="#C8DCFF"  stop-opacity="0.85"/>
+      <stop offset="12%"  stop-color="#EEF3FF"  stop-opacity="0.6"/>
+      <stop offset="22%"  stop-color="#F0F4FF"  stop-opacity="0.3"/>
+      <stop offset="38%"  stop-color="#DCE8FF"  stop-opacity="0.1"/>
+      <stop offset="58%"  stop-color="#C8D8F0"  stop-opacity="0.03"/>
+      <stop offset="100%" stop-color="#000000"  stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="2320" height="720" fill="#000000"/>
+  <circle cx="776" cy="360" r="600" fill="url(#spark)"/>
+  <line x1="1080" y1="280" x2="1080" y2="440"
+        stroke="#C8DCFF" stroke-width="0.75" stroke-opacity="0.5"/>
+  <text
+    x="1160" y="388"
+    font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
+    font-size="96" font-weight="300" fill="#FFFFFF"
+    letter-spacing="28" text-anchor="start"
+    dominant-baseline="middle">REFLECT</text>
+</svg>
+EOF
+    rsvg-convert -w 2320 -h 720 "$tmp_svg" -o "$out"
+    rm -f "$tmp_svg"
+}
+
+echo "=== iOS app icon (Reflect target) ==="
+mkdir -p "$IOS_OUT"
+for size in 20 29 40 48 50 55 57 58 60 66 72 76 80 87 88 92 100 102 108 114 120 144 172 180 196 216 234 258 1024; do
+    render_square "$size" "$IOS_OUT/${size}.png"
+    echo "  $size.png"
+done
+render_square 152 "$IOS_OUT/152x152.png"; echo "  152x152.png"
+render_square 167 "$IOS_OUT/167x167.png"; echo "  167x167.png"
+
+echo "=== Watch app icon ==="
+mkdir -p "$WATCH_OUT"
+render_square 1024 "$WATCH_OUT/appstore.png"
+echo "  appstore.png"
+
+echo "=== tvOS App Icon (parallax imagestack — same flat image for all 3 layers) ==="
+# App Icon - App Store: 1280x768
+APPSTORE="$TV_BRAND/App Icon - App Store.imagestack"
+for layer in Back Middle Front; do
+    dir="$APPSTORE/$layer.imagestacklayer/Content.imageset"
+    mkdir -p "$dir"
+    render_wide_icon 1280 768 "$dir/Reflect TV 1280x768 flat.png"
+    echo "  $layer 1280x768"
+done
+# App Icon (small): 400x240
+APPICON="$TV_BRAND/App Icon.imagestack"
+for layer in Back Middle Front; do
+    dir="$APPICON/$layer.imagestacklayer/Content.imageset"
+    mkdir -p "$dir"
+    render_wide_icon 400 240 "$dir/Reflect TV 400x240 flat.png"
+    echo "  $layer 400x240"
+done
+
+echo "=== tvOS Top Shelf ==="
+# Top Shelf Image 1: 1920x720 — render the topshelf SVG directly
+TOPSHELF="$TV_BRAND/Top Shelf Image 1.imageset"
+mkdir -p "$TOPSHELF"
+rsvg-convert -w 1920 -h 720 "$TOPSHELF_SVG" -o "$TOPSHELF/Reflect TV 1920x720.png"
+echo "  Top Shelf 1920x720"
+# Top Shelf Image Wide 1: 2320x720 — pad 1920 design with black
+TOPSHELF_WIDE="$TV_BRAND/Top Shelf Image Wide 1.imageset"
+mkdir -p "$TOPSHELF_WIDE"
+render_topshelf_wide "$TOPSHELF_WIDE/Reflect TV 2320x720.png"
+echo "  Top Shelf Wide 2320x720"
+
+echo
+echo "Done. All icon assets regenerated."

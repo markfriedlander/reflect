@@ -88,41 +88,54 @@
 		85E4D82B2DC47C3E00B7413E /* Reflect Watch Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Reflect Watch Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		852BEF972DC6C84C006A5D3A /* Exceptions for "Reflect" folder in "Reflect TV" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Prompts.swift,
-			);
-			target = 852BEF6B2DC6C62F006A5D3A /* Reflect TV */;
-		};
-		852BEF992DC6C979006A5D3A /* Exceptions for "Reflect" folder in "Reflect Watch Watch App" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Prompts.swift,
-			);
-			target = 85E4D8112DC47C3B00B7413E /* Reflect Watch Watch App */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		6260A1F4A34240CA9E08B1BE /* Shared */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		7914FDE2994F27E30E9E7944 /* Watch */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			path = Watch;
+			sourceTree = "<group>";
+		};
 		852BEF6D2DC6C630006A5D3A /* Reflect TV */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
 			path = "Reflect TV";
 			sourceTree = "<group>";
 		};
 		85CE5BA52DBF365B00D1B87C /* Reflect */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				852BEF992DC6C979006A5D3A /* Exceptions for "Reflect" folder in "Reflect Watch Watch App" target */,
-				852BEF972DC6C84C006A5D3A /* Exceptions for "Reflect" folder in "Reflect TV" target */,
 			);
 			path = Reflect;
 			sourceTree = "<group>";
 		};
 		85E4D8132DC47C3B00B7413E /* Reflect Watch Watch App */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
 			path = "Reflect Watch Watch App";
+			sourceTree = "<group>";
+		};
+		89E6571238651E8A1C0FA8BD /* iOS */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		F910688EF0839550BE429FED /* tvOS */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			path = tvOS;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -201,6 +214,10 @@
 				85E4D8132DC47C3B00B7413E /* Reflect Watch Watch App */,
 				852BEF6D2DC6C630006A5D3A /* Reflect TV */,
 				85CE5BA42DBF365B00D1B87C /* Products */,
+				6260A1F4A34240CA9E08B1BE /* Shared */,
+				89E6571238651E8A1C0FA8BD /* iOS */,
+				F910688EF0839550BE429FED /* tvOS */,
+				7914FDE2994F27E30E9E7944 /* Watch */,
 			);
 			sourceTree = "<group>";
 		};
@@ -237,10 +254,10 @@
 			);
 			fileSystemSynchronizedGroups = (
 				852BEF6D2DC6C630006A5D3A /* Reflect TV */,
+				6260A1F4A34240CA9E08B1BE /* Shared */,
+				F910688EF0839550BE429FED /* tvOS */,
 			);
 			name = "Reflect TV";
-			packageProductDependencies = (
-			);
 			productName = "Reflect TV";
 			productReference = 852BEF6C2DC6C62F006A5D3A /* Reflect TV.app */;
 			productType = "com.apple.product-type.application";
@@ -259,8 +276,6 @@
 				852BEF7D2DC6C633006A5D3A /* PBXTargetDependency */,
 			);
 			name = "Reflect TVTests";
-			packageProductDependencies = (
-			);
 			productName = "Reflect TVTests";
 			productReference = 852BEF7B2DC6C633006A5D3A /* Reflect TVTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -279,8 +294,6 @@
 				852BEF872DC6C633006A5D3A /* PBXTargetDependency */,
 			);
 			name = "Reflect TVUITests";
-			packageProductDependencies = (
-			);
 			productName = "Reflect TVUITests";
 			productReference = 852BEF852DC6C633006A5D3A /* Reflect TVUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
@@ -301,10 +314,10 @@
 			);
 			fileSystemSynchronizedGroups = (
 				85CE5BA52DBF365B00D1B87C /* Reflect */,
+				6260A1F4A34240CA9E08B1BE /* Shared */,
+				89E6571238651E8A1C0FA8BD /* iOS */,
 			);
 			name = Reflect;
-			packageProductDependencies = (
-			);
 			productName = Reflect;
 			productReference = 85CE5BA32DBF365B00D1B87C /* Reflect.app */;
 			productType = "com.apple.product-type.application";
@@ -323,8 +336,6 @@
 				85CE5BB52DBF365E00D1B87C /* PBXTargetDependency */,
 			);
 			name = ReflectTests;
-			packageProductDependencies = (
-			);
 			productName = ReflectTests;
 			productReference = 85CE5BB32DBF365E00D1B87C /* ReflectTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -343,8 +354,6 @@
 				85CE5BBF2DBF365E00D1B87C /* PBXTargetDependency */,
 			);
 			name = ReflectUITests;
-			packageProductDependencies = (
-			);
 			productName = ReflectUITests;
 			productReference = 85CE5BBD2DBF365E00D1B87C /* ReflectUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
@@ -363,10 +372,10 @@
 			);
 			fileSystemSynchronizedGroups = (
 				85E4D8132DC47C3B00B7413E /* Reflect Watch Watch App */,
+				6260A1F4A34240CA9E08B1BE /* Shared */,
+				7914FDE2994F27E30E9E7944 /* Watch */,
 			);
 			name = "Reflect Watch Watch App";
-			packageProductDependencies = (
-			);
 			productName = "Reflect Watch Watch App";
 			productReference = 85E4D8122DC47C3B00B7413E /* Reflect Watch Watch App.app */;
 			productType = "com.apple.product-type.application";
@@ -385,8 +394,6 @@
 				85E4D8232DC47C3E00B7413E /* PBXTargetDependency */,
 			);
 			name = "Reflect Watch Watch AppTests";
-			packageProductDependencies = (
-			);
 			productName = "Reflect Watch Watch AppTests";
 			productReference = 85E4D8212DC47C3E00B7413E /* Reflect Watch Watch AppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -405,8 +412,6 @@
 				85E4D82D2DC47C3E00B7413E /* PBXTargetDependency */,
 			);
 			name = "Reflect Watch Watch AppUITests";
-			packageProductDependencies = (
-			);
 			productName = "Reflect Watch Watch AppUITests";
 			productReference = 85E4D82B2DC47C3E00B7413E /* Reflect Watch Watch AppUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
@@ -1073,7 +1078,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 9.6;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
 			};
 			name = Debug;
 		};
@@ -1103,7 +1108,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 9.6;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
 			};
 			name = Release;
 		};

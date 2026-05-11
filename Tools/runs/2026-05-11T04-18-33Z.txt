@@ -1,0 +1,83 @@
+Reflect AFM Harness — 2026-05-11T04-18-33Z
+N per move: 3, pass rate: 29/36
+
+=== Subtraction ===
+  [1] ✓ (3w): Drop the noise
+      raw: Drop the noise.
+  [2] ✓ (3w): Reduce to silence
+      raw: Reduce to silence.
+  [3] ✓ (9w): What's left when you unlisten to your inner critic?
+
+=== Inversion ===
+  [1] ✓ (6w): Turn the subject into the object
+      raw: Turn the subject into the object.
+  [2] ✗ too-short (2w): Stop talking
+      raw: Stop talking.
+  [3] ✓ (6w): When the audience leaves the scene
+
+=== Constraint ===
+  [1] ✓ (8w): Take a walk with only one shoe on
+      raw: Take a walk with only one shoe on.
+  [2] ✓ (4w): Use only upside-down words
+      raw: Use only upside-down words.
+  [3] ✓ (12w): Choose an unknown artist and create a piece inspired by their works
+      raw: Choose an unknown artist and create a piece inspired by their works.
+
+=== Displacement ===
+  [1] ✓ (6w): Draw a clock for a tree
+      raw: Draw a clock for a tree.
+  [2] ✓ (8w): Describe a digital object in a real-world scenario
+      raw: Describe a digital object in a real-world scenario.
+  [3] ✓ (8w): Describe a city using soundscapes instead of images
+      raw: Describe a city using soundscapes instead of images.
+
+=== Attention ===
+  [1] ✓ (3w): Observe the background
+      raw: Observe the background.
+  [2] ✓ (6w): What's the silence of the room?
+  [3] ✓ (6w): What is the silence between words?
+
+=== Acceptance ===
+  [1] ✗ too-long (16w): What if you were tasked with designing a space where every flaw added an unexpected charm?
+  [2] ✓ (5w): Reframe the noise as harmony
+  [3] ✓ (7w): What is the shape of your solution?
+
+=== Perspective ===
+  [1] ✗ too-long (24w): The sun dips beneath the horizon, casting a golden glow over the bustling cityscape. Yet, from this vantage point, the city appears almost otherworldly,
+  [2] ✗ named-move (8w): What is an alien's perspective on the weather?
+  [3] ✗ domain-assumed (10w): What happens if you start composing your song in reverse?
+
+=== Time ===
+  [1] ✗ multiple-sentences (7w): 1. 2:47 PM, pause your creative workflow
+      raw: 1. 2:47 PM, pause your creative workflow.
+  [2] ✗ domain-assumed (8w): Stay in bed for an hour and paint
+      raw: Stay in bed for an hour and paint.
+  [3] ✓ (5w): Whisper silence within the silence
+      raw: Whisper silence within the silence.
+
+=== Reduction ===
+  [1] ✓ (4w): Leave the world behind
+  [2] ✓ (4w): Squeeze into a jar
+      raw: Squeeze into a jar.
+  [3] ✓ (12w): Replace the last line with the word "?" if it's a question
+      raw: Replace the last line with the word "?" if it's a question.
+
+=== Courage ===
+  [1] ✓ (6w): What if you're already good enough?
+  [2] ✓ (3w): Observe without sound
+      raw: Observe without sound.
+  [3] ✓ (3w): Steal the scene
+      raw: Steal the scene.
+
+=== Process ===
+  [1] ✓ (7w): Focus on the curve of the shadow
+      raw: Focus on the curve of the shadow.
+  [2] ✓ (5w): What movement sustains the flow?
+  [3] ✓ (3w): Feel the rhythm
+      raw: Feel the rhythm.
+
+=== Reality Check ===
+  [1] ✓ (4w): What's the texture like?
+  [2] ✓ (5w): What color is the chair?
+  [3] ✓ (4w): How does it feel?
+

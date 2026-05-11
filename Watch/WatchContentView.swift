@@ -11,9 +11,10 @@
 //  every other surface. AFM is not available on watchOS; the engine
 //  handles that silently.
 //
-//  This file is a member of the Watch app target (companion inside the
-//  iOS bundle). It lives in iOS/ alongside the iPhone view because the
-//  shared module structure flattens platform views into one folder.
+//  Accessibility:
+//   - One focusable element labeled with the current prompt.
+//   - Default action = advance to next card.
+//   - Scale-bounce and fade suppressed under Reduce Motion.
 //
 
 #if os(watchOS)
@@ -23,6 +24,7 @@ import WatchKit
 struct WatchContentView: View {
 
     @Environment(PromptEngine.self) private var engine
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     @State private var currentText: String = ""
     @State private var scale: CGFloat = 1.0
@@ -42,23 +44,34 @@ struct WatchContentView: View {
             .background(Color.black)
             .contentShape(Rectangle())
             .onTapGesture { handleTap() }
+            .accessibilityElement(children: .ignore)
+            .accessibilityLabel(currentText.isEmpty ? "Reflect" : currentText)
+            .accessibilityHint("Double-tap for the next card.")
+            .accessibilityAddTraits(.isButton)
+            .accessibilityAction { handleTap() }
             .onAppear { advance() }
     }
 
     private func handleTap() {
         WKInterfaceDevice.current().play(.click)
-        withAnimation(.easeInOut(duration: 0.15)) { scale = 1.08 }
-        Task { @MainActor in
-            try? await Task.sleep(for: .milliseconds(150))
-            withAnimation(.easeInOut(duration: 0.15)) { scale = 1.0 }
+        if !reduceMotion {
+            withAnimation(.easeInOut(duration: 0.15)) { scale = 1.08 }
+            Task { @MainActor in
+                try? await Task.sleep(for: .milliseconds(150))
+                withAnimation(.easeInOut(duration: 0.15)) { scale = 1.0 }
+            }
         }
         advance()
     }
 
     private func advance() {
         let next = engine.next()
-        withAnimation(.easeInOut(duration: fadeDuration)) {
+        if reduceMotion {
             currentText = next
+        } else {
+            withAnimation(.easeInOut(duration: fadeDuration)) {
+                currentText = next
+            }
         }
     }
 }

@@ -13,12 +13,21 @@
 //  Auto-advance uses a structured Task that's cancelled on view disappear
 //  or mode toggle. No recursive asyncAfter.
 //
+//  Accessibility:
+//   - The card is one focusable element with the prompt as its label.
+//   - Tap = next card (default VoiceOver action).
+//   - Custom VO action "Toggle ambient mode" replaces long-press for
+//     screen-reader users, who can't easily long-press.
+//   - Fade animations are suppressed when Reduce Motion is on.
+//   - Dynamic Type works automatically via system(.title2, ...).
+//
 
 import SwiftUI
 
 struct ContentView: View {
 
     @Environment(PromptEngine.self) private var engine
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     @AppStorage("isAutoModeEnabled") private var isAutoModeEnabled = false
 
@@ -51,12 +60,25 @@ struct ContentView: View {
                     .foregroundStyle(.white.opacity(0.6))
                     .padding(.bottom, 24)
                     .opacity(showToast ? 1 : 0)
-                    .animation(.easeInOut(duration: 0.6), value: showToast)
+                    .animation(reduceMotion ? nil : .easeInOut(duration: 0.6),
+                               value: showToast)
+                    .accessibilityHidden(true) // mode-change is announced via state
             }
         }
         .contentShape(Rectangle())
         .onTapGesture { handleTap() }
         .onLongPressGesture(minimumDuration: 0.6) { toggleAutoMode() }
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(currentText.isEmpty ? "Reflect" : currentText)
+        .accessibilityHint(isAutoModeEnabled
+                           ? "Ambient mode on. Double-tap for the next card."
+                           : "Double-tap for the next card.")
+        .accessibilityAddTraits(.isButton)
+        .accessibilityAction { handleTap() }
+        .accessibilityAction(named: isAutoModeEnabled ? "Turn ambient mode off"
+                                                      : "Turn ambient mode on") {
+            toggleAutoMode()
+        }
         .onAppear {
             advance()
             if isAutoModeEnabled { startAutoLoop() }
@@ -86,8 +108,12 @@ struct ContentView: View {
 
     private func advance() {
         let next = engine.next()
-        withAnimation(.easeInOut(duration: fadeDuration)) {
+        if reduceMotion {
             currentText = next
+        } else {
+            withAnimation(.easeInOut(duration: fadeDuration)) {
+                currentText = next
+            }
         }
     }
 

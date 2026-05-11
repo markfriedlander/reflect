@@ -36,6 +36,23 @@ enum Move: String, CaseIterable {
     case realityCheck  = "Reality Check"
 }
 
+// MARK: - Move semantics (what each move actually *does*)
+
+let moveSemantics: [Move: String] = [
+    .subtraction:  "Remove something. Strip to essence. What remains when you take the obvious away?",
+    .inversion:    "Flip the polarity. Run it backward. Do the opposite of what seems right.",
+    .constraint:   "Impose an arbitrary rule that closes the obvious path and forces a new one.",
+    .displacement: "Move the problem sideways into a different medium, domain, speed, or scale.",
+    .attention:    "Direct focus to what's being ignored, avoided, or taken for granted.",
+    .acceptance:   "Reframe a perceived problem as a resource. Work with what's actually there.",
+    .perspective:  "Inhabit a genuinely alien point of view. A complete transplant, not a slight shift.",
+    .time:         "Disrupt the temporal relationship to the work. Change when you are in it.",
+    .reduction:    "Find the smallest irreducible unit. Make just one thing. Work only from there.",
+    .courage:      "Remove the permission-seeking. Dissolve hesitation. Do the avoided thing.",
+    .process:      "Dissolve perfectionism by focusing on motion rather than destination.",
+    .realityCheck: "Cut through abstraction. Look at what's actually there. Name the real thing.",
+]
+
 // MARK: - Example pools per move (drawn from curated library, sampled per call)
 
 let moveExamplePools: [Move: [String]] = [
@@ -92,10 +109,11 @@ let moveExamplePools: [Move: [String]] = [
         "Reduce until it's only itself", "Name the one thing that cannot be removed"
     ],
     .courage: [
-        "Try the impossible", "Ignore logic", "Make it brutal", "Make it shout",
-        "Break your routine", "Make art for no one", "Go to the extreme",
+        "Try the impossible", "Ignore logic", "Make it shout",
+        "Break your routine", "Make it for no one", "Go to the extreme",
         "Do the thing you keep not doing", "What if failure is the path?",
-        "What would you create if you couldn't fail?", "Speak your desire without editing"
+        "What would you create if you couldn't fail?", "Speak your desire without editing",
+        "Stop asking permission", "Make the brave choice", "Drop your defenses"
     ],
     .process: [
         "Just carry on", "Make it feel inevitable", "Build a bridge to nowhere",
@@ -119,18 +137,31 @@ func sampleExamples(for move: Move) -> [String] {
     return Array(pool.shuffled().prefix(4))
 }
 
+/// The flat list of every curated prompt — used as a dedup set so the model
+/// can't satisfy validation by echoing any card from the deck.
+let allCuratedTexts: Set<String> = {
+    var s = Set<String>()
+    for (_, pool) in moveExamplePools { s.formUnion(pool) }
+    return s
+}()
+
 func systemPrompt(for move: Move, examples: [String]) -> String {
     let exampleBlock = examples.map { "- \($0)" }.joined(separator: "\n")
+    let semantics = moveSemantics[move] ?? ""
 
     return """
     You write single-line creative prompts in the style of Brian Eno and Peter Schmidt's Oblique Strategies — short, oblique cards that disrupt a creative person's habitual thinking. The prompts work for any creative discipline (music, visual art, writing, software, cooking, design).
 
+    THIS PROMPT MUST EMBODY THE "\(move.rawValue)" MOVE.
+    What that means: \(semantics)
+    A reader should be able to feel that semantic in the prompt without being told the move name.
+
     FORM: A prompt is almost always one of two things:
-    - A short directive starting with a verb ("Take one part away", "Reverse it", "Use the wrong tool")
+    - A short directive starting with a verb ("Take one part away", "Use the wrong tool")
     - A short question ("What is its shadow?", "What's hiding in plain sight?")
     A prompt is NOT a poetic image, NOT a metaphor, NOT a description, NOT a scene.
 
-    Below are 4 reference prompts that all use the \(move.rawValue) move. Read them to absorb the voice — then write a DIFFERENT one that captures the same spirit. Do NOT copy. Do NOT paraphrase. Write something new with the same structural move and same feel.
+    Below are 4 reference prompts that all use the \(move.rawValue) move. Read them to absorb the voice — then write a DIFFERENT one that captures the same spirit. Do NOT copy. Do NOT paraphrase. Do NOT write a tiny variation. Write something genuinely new.
 
     Reference (DO NOT reproduce — voice study only):
     \(exampleBlock)
@@ -138,25 +169,28 @@ func systemPrompt(for move: Move, examples: [String]) -> String {
     Examples of BAD output (never write anything like these):
     - Write a short poem about a cat (BAD: assumes a creative domain)
     - Cook a meal with only five ingredients (BAD: assumes a creative domain)
+    - Create a melody with a drum (BAD: assumes a creative domain)
     - Imagine a universe where colors have no shape (BAD: starts with "Imagine"; abstract not oblique)
     - A river whispers secrets through reeds (BAD: poetic image, not a directive)
     - Embrace your authentic creative journey (BAD: motivational vocabulary)
     - Step outside the box (BAD: cliché)
+    - Reverse it (BAD: too short, too generic; many moves have a "reverse" flavor)
+    - Reverse the narrative / Reverse the composition (BAD: lazy "Reverse X" pattern)
     - Move: \(move.rawValue) (BAD: echoes the move name)
 
     Hard rules:
     1. Length: 3 to 7 words. Hard maximum 9. Count.
     2. Form: directive or question. Not an image. Not a sentence describing a scene.
-    3. Domain-agnostic. Forbidden: poem, canvas, song, meal, code, story, palette, melody, instrument, chord, brush, lyric, recipe, paint, sculpture, painting, novel, paragraph, ink, page.
+    3. Domain-agnostic. Forbidden: poem, canvas, song, meal, code, story, palette, melody, instrument, chord, brush, lyric, recipe, paint, sculpture, painting, novel, paragraph, ink, page, drum, symphony, composition, writing, narrative, drawing.
     4. No motivational/wellness words: journey, transform, embrace, soul, authentic, growth, heal, manifest, radical, surrender, self-care.
     5. No clichés ("step outside the box", "think outside the box", "trust the process").
     6. Do not start with "Imagine".
     7. Do not name or echo the move ("\(move.rawValue)").
-    8. Do not copy or paraphrase any reference prompt.
+    8. Do not copy any reference prompt. Do not write a near-trivial variation.
     9. Output ONLY the prompt text — no quotation marks, no labels, no preamble, no bullet, no number.
     10. No terminal punctuation except "?" if it's a question.
 
-    Now write ONE new \(move.rawValue) prompt. 3 to 7 words. A directive or a question. Different from every reference above:
+    Now write ONE new \(move.rawValue) prompt — 3 to 7 words, directive or question, that captures: \(semantics)
     """
 }
 
@@ -201,7 +235,9 @@ let domainWords: Set<String> = [
     "canvas", "painting", "paint", "sketch", "sculpture", "palette", "brush", "ink", "page",
     "meal", "dish", "recipe", "ingredients", "ingredient", "flavor",
     "code", "function", "algorithm", "program", "script",
-    "melody", "chord", "lyric", "lyrics", "instrument"
+    "melody", "chord", "lyric", "lyrics", "instrument", "drum", "symphony", "composition",
+    "writing", "narrative", "manuscript", "draft",
+    "drawing", "drawings", "photograph"
 ]
 
 let clicheTokens: [String] = [
@@ -241,7 +277,9 @@ func validate(text: String, exampleSet: Set<String>) -> FailReason? {
     for cliche in clicheTokens where lower.contains(cliche) {
         return .cliche
     }
-    // Reject if the output is identical to one of the examples we showed.
+    // Reject if the output matches any curated prompt (entire library, not
+    // just the few examples we sampled this call).
+    if allCuratedTexts.contains(text) { return .copiedExample }
     if exampleSet.contains(text) { return .copiedExample }
     return nil
 }

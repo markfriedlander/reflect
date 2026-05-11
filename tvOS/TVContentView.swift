@@ -19,6 +19,12 @@
 //  Idle timer disabled on appear so the screensaver doesn't kick in
 //  while the app is foregrounded.
 //
+//  Accessibility:
+//   - One focusable element, label = current prompt, trait .updatesFrequently
+//     so VoiceOver announces changes as ambient cycles.
+//   - Remote-select action advances early.
+//   - Fade animations are suppressed under Reduce Motion.
+//
 
 #if os(tvOS)
 import SwiftUI
@@ -26,6 +32,7 @@ import SwiftUI
 struct TVContentView: View {
 
     @Environment(PromptEngine.self) private var engine
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     @State private var currentText: String = ""
     @State private var isVisible: Bool = false
@@ -55,11 +62,18 @@ struct TVContentView: View {
             .padding(.horizontal, 120)
             .frame(maxWidth: 1400)
             .opacity(isVisible ? 1 : 0)
-            .animation(.easeInOut(duration: fadeDuration), value: isVisible)
+            .animation(reduceMotion ? nil : .easeInOut(duration: fadeDuration),
+                       value: isVisible)
         }
         .focusable()
         .focusEffectDisabled()
         .onTapGesture { advanceImmediately() }
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(showLaunchTitle ? "Reflect: Creative Sparks"
+                                            : (currentText.isEmpty ? "Reflect" : currentText))
+        .accessibilityHint("Press the remote to show the next card.")
+        .accessibilityAddTraits([.isButton, .updatesFrequently])
+        .accessibilityAction { advanceImmediately() }
         .onAppear { startSequence() }
         .onDisappear {
             rotationTask?.cancel()

@@ -3,6 +3,16 @@
 
 ---
 
+## Open Source
+
+Reflect is open source under the **MIT License**. The repo lives at
+[github.com/markfriedlander/reflect](https://github.com/markfriedlander/reflect).
+The original Reflect codebase was public; the unification work continues
+that. Any code Claude Code writes here ships under the same license. See
+[LICENSE](LICENSE) at the repo root.
+
+---
+
 ## What This Project Is
 
 Reflect: Creative Sparks is a free iOS, iPadOS, tvOS, watchOS, and macOS app that displays creative prompts in the spirit of Brian Eno and Peter Schmidt's Oblique Strategies. It is a minimal, privacy-first creative tool — no accounts, no subscriptions, no analytics, no network calls. The prompt is the entire product.

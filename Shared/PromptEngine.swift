@@ -30,10 +30,13 @@ final class PromptEngine {
 
     private(set) var recentHistory: [PromptCard] = []
 
-    init(curated: [PromptCard] = curatedPrompts, afm: AFMPromptGenerator? = AFMPromptGenerator()) {
+    init(curated: [PromptCard] = curatedPrompts, afm: AFMPromptGenerator? = nil) {
         self.curated = curated
         self.curatedTexts = Set(curated.map(\.text))
-        self.afm = afm
+        // Default afm to a fresh AFMPromptGenerator if none provided.
+        // Constructed inside the MainActor-isolated init body to satisfy
+        // Swift 6's actor-isolation rules for default arguments.
+        self.afm = afm ?? AFMPromptGenerator(library: curated)
     }
 
     /// Returns the next prompt's text. Updates history and triggers AFM

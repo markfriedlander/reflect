@@ -127,3 +127,68 @@ the production file.
 - MIT LICENSE file + open-source acknowledgment in CLAUDE.md/HANDOFF_BRIEF
 - GitHub push (this commit handles the push for safety, but the above
   three items remain on the list)
+
+## 2026-05-10 — Finish line session
+
+**AFM iteration completed.** Rounds 5 and 6 of harness output reviewed.
+Round 6 added: per-move semantic descriptions in the system prompt
+(so the model understands what each move *is*, not just what example
+outputs look like), randomly sampled examples per call (preventing
+fixation), dedup against entire curated library, expanded validator
+(banned words, domain words, multi-sentence detection, cliché tokens,
+named-move detection, "Imagine" prefix rejection, list-bullet cleaning).
+**Final pass rate: 80.6% per attempt, ~99% per-slot with 3 retries.**
+Ported tuned prompt + validation logic into production
+`Shared/AFMPromptGenerator.swift`. Bumped availability gate to iOS 26 /
+macOS 26 (FoundationModels requirement, not the iOS 17 we had).
+
+**Xcode wiring done directly.** Discovered the project uses Xcode 16
+synchronized folder groups, which means no per-file references — adding
+new folders linked to targets is enough. Wrote `Tools/wire_xcode.rb`
+(using Ruby's xcodeproj gem) to:
+- Add `Shared/`, `iOS/`, `tvOS/`, `Watch/` as synchronized groups linked
+  to the appropriate targets.
+- Remove obsolete `PBXFileSystemSynchronizedBuildFileExceptionSet`
+  entries that had been sharing the old `Reflect/Prompts.swift` across
+  targets (now causing duplicate-compile errors with the new sync setup).
+- Bump Watch deployment target 9.6 → 11.0 per spec.
+
+Reorganized files on disk: moved Watch view into `Watch/`, deleted
+legacy per-target Swift sources. **Builds clean, zero warnings on all
+three schemes** (iOS, tvOS, watchOS).
+
+**MIT LICENSE added** at repo root. CLAUDE.md updated with open-source
+acknowledgment.
+
+**Icons regenerated** from locked `reflect_icon_C_blend.svg` via
+`Tools/generate_icons.sh` using `librsvg`. iOS legacy sizes (20–1024),
+watchOS 1024 marketing, tvOS App Icon imagestacks (1280×768, 400×240),
+Top Shelf (1920×720), Top Shelf Wide (2320×720 with black side padding).
+
+**HIG + accessibility audit.** Added VoiceOver labels, hints, and
+custom actions to all three views. Custom "Turn ambient mode on/off"
+action exposes long-press functionality to VO users. All animations
+respect Reduce Motion. TV view marked `.updatesFrequently` so VO
+announces prompt changes in ambient mode. Contrast 21:1 (pure black/white,
+WCAG AAA). Dynamic Type via semantic system fonts.
+
+**Three-hat QA on iOS simulator.** Built and installed on iPhone 17 Pro
+sim. Verified: app launches direct to first prompt, tap advances cleanly,
+cluster avoidance working (three consecutive prompts spanned three
+different moves), accessibility tree correctly shows the card as a
+button with the prompt as label, "Double-tap for the next card." hint,
+and "Turn ambient mode on" custom action.
+
+**tvOS QA.** Built and installed on Apple TV 4K (3rd gen) sim. Verified
+launch title fade-in/fade-out, then first prompt appears with correct
+typography and fade-to-black discipline. Variable dwell logic active.
+
+**Bundle ID issue flagged for Mark.** Reflect TV target's bundle ID is
+`com.MarkFriedlander.Reflect-TV` (legacy standalone format). For
+Universal Purchase it needs to be `com.MarkFriedlander.Reflect.tv`
+(child of the iOS bundle). Left for Mark because changing it impacts
+App Store Connect records and provisioning profiles.
+
+**Open-source status confirmed.** Repo is public at
+`github.com/markfriedlander/reflect`. MIT licensed. Note added to
+CLAUDE.md and HANDOFF_BRIEF.md.
