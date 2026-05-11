@@ -1,0 +1,14 @@
+getpwuid_r did not find a match for uid 501
+Filtering the log data using "subsystem == "com.MarkFriedlander.Reflect""
+Timestamp               Ty Process[PID:TID]
+2026-05-10 22:09:01.973 I  Reflect Watch Watch App[64900:30d923] [com.MarkFriedlander.Reflect:engine] card #1 [curated] [Process] Just carry on
+2026-05-10 22:09:01.973 Db Reflect Watch Watch App[64900:30d923] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:09:25.713 I  Reflect Watch Watch App[64900:30d923] [com.MarkFriedlander.Reflect:watch] haptic .click fired
+2026-05-10 22:09:25.721 I  Reflect Watch Watch App[64900:30d923] [com.MarkFriedlander.Reflect:engine] card #2 [curated] [Inversion] Stick to the plan
+2026-05-10 22:09:25.721 Db Reflect Watch Watch App[64900:30d923] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:09:30.740 I  Reflect Watch Watch App[64900:30d923] [com.MarkFriedlander.Reflect:watch] haptic .click fired
+2026-05-10 22:09:30.741 I  Reflect Watch Watch App[64900:30d923] [com.MarkFriedlander.Reflect:engine] card #3 [curated] [Reduction] Do one thing, completely
+2026-05-10 22:09:30.741 Db Reflect Watch Watch App[64900:30d923] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:09:35.771 I  Reflect Watch Watch App[64900:30d923] [com.MarkFriedlander.Reflect:watch] haptic .click fired
+2026-05-10 22:09:35.772 I  Reflect Watch Watch App[64900:30d923] [com.MarkFriedlander.Reflect:engine] card #4 [curated] [Constraint] Use the wrong tool
+2026-05-10 22:09:35.772 Db Reflect Watch Watch App[64900:30d923] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false

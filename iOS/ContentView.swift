@@ -23,6 +23,9 @@
 //
 
 import SwiftUI
+import os
+
+private let viewLog = Logger(subsystem: "com.MarkFriedlander.Reflect", category: "view-ios")
 
 struct ContentView: View {
 
@@ -108,6 +111,7 @@ struct ContentView: View {
 
     private func advance() {
         let next = engine.next()
+        viewLog.debug("advance reduceMotion=\(reduceMotion)")
         if reduceMotion {
             currentText = next
         } else {

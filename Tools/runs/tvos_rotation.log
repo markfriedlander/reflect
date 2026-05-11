@@ -1,0 +1,185 @@
+getpwuid_r did not find a match for uid 501
+Filtering the log data using "subsystem == "com.MarkFriedlander.Reflect""
+Timestamp               Ty Process[PID:TID]
+2026-05-10 22:05:42.470 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #1 [curated] [Constraint] Invite absurdity into your logic
+2026-05-10 22:05:42.470 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:05:50.868 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #2 [curated] [Courage] What if failure is the path?
+2026-05-10 22:05:50.869 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:05:55.661 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #3 [curated] [Constraint] Break your favorite rule
+2026-05-10 22:05:55.662 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:06:05.595 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #4 [curated] [Reduction] Make it fit in one sentence
+2026-05-10 22:06:05.595 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:06:15.262 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #5 [curated] [Reality Check] What happens when you pause?
+2026-05-10 22:06:15.262 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:06:24.004 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #6 [curated] [Constraint] Use only statements
+2026-05-10 22:06:24.005 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:06:30.392 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #7 [curated] [Attention] Notice what you always overlook
+2026-05-10 22:06:30.393 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:06:39.667 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #8 [curated] [Courage] Break your routine
+2026-05-10 22:06:39.668 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:06:53.867 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #9 [curated] [Reduction] Reduce until it's only itself
+2026-05-10 22:06:53.867 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:07:03.371 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Attention] Where is it rigid?
+2026-05-10 22:07:03.371 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:07:13.528 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Time] Start with a sound
+2026-05-10 22:07:13.528 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:07:20.661 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Subtraction] Take one part away
+2026-05-10 22:07:20.661 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:07:28.337 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Reduction] Do one thing completely
+2026-05-10 22:07:28.337 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:07:35.542 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Acceptance] Make friends with emptiness
+2026-05-10 22:07:35.542 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:07:49.469 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Time] Describe the echo of something that never happened
+2026-05-10 22:07:49.470 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:07:53.659 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Perspective] What would the work say about you?
+2026-05-10 22:07:53.659 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:08:02.087 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Time] Return to what you've abandoned
+2026-05-10 22:08:02.087 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:08:11.782 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Attention] Notice what you're avoiding
+2026-05-10 22:08:11.782 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:08:24.527 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Courage] What if failure is the path?
+2026-05-10 22:08:24.527 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:08:31.954 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Constraint] Use only what's already here
+2026-05-10 22:08:31.955 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:08:39.468 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Acceptance] Transform a wound into a doorway
+2026-05-10 22:08:39.468 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:08:45.670 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Perspective] Navigate by feeling rather than sight
+2026-05-10 22:08:45.671 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:08:54.538 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Attention] What lives in the echo?
+2026-05-10 22:08:54.538 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:09:04.009 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Subtraction] Remove the expected
+2026-05-10 22:09:04.009 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:09:17.772 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Constraint] Use only questions
+2026-05-10 22:09:17.773 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:09:25.802 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Attention] What's too obvious?
+2026-05-10 22:09:25.803 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:09:33.005 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Displacement] Explore what defies language
+2026-05-10 22:09:33.006 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:09:41.298 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Process] Follow the idea that won't leave you alone
+2026-05-10 22:09:41.299 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:09:48.753 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Attention] Find the edge
+2026-05-10 22:09:48.753 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:09:56.987 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Displacement] Change the genre
+2026-05-10 22:09:56.987 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:10:05.476 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Perspective] Let the shadows guide you
+2026-05-10 22:10:05.477 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:10:14.368 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Attention] Honor what you've been dismissing
+2026-05-10 22:10:14.368 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:10:21.701 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Reduction] Find the atom of it
+2026-05-10 22:10:21.702 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:10:31.470 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Displacement] Speak in colors instead of words
+2026-05-10 22:10:31.470 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:10:44.147 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Inversion] Tell the opposite story
+2026-05-10 22:10:44.147 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:10:53.194 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Attention] Notice what you always overlook
+2026-05-10 22:10:53.194 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:10:59.465 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Constraint] Only use logic
+2026-05-10 22:10:59.466 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:11:15.553 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Attention] Find the extraordinary in the mundane
+2026-05-10 22:11:15.553 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:11:23.352 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Time] Rewrite your history from a different perspective
+2026-05-10 22:11:23.352 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:11:30.666 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Courage] Destroy something
+2026-05-10 22:11:30.666 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:11:40.293 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Attention] Find the center
+2026-05-10 22:11:40.293 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:11:49.295 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Displacement] Draw it instead
+2026-05-10 22:11:49.296 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:11:57.469 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Subtraction] Make it strange
+2026-05-10 22:11:57.469 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:12:04.674 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Displacement] Make it fictional
+2026-05-10 22:12:04.674 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:12:12.698 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Process] Make something — then see what it is
+2026-05-10 22:12:12.699 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:12:19.341 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Reduction] Name the one thing that cannot be removed
+2026-05-10 22:12:19.342 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:12:25.591 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Displacement] Describe the texture of time
+2026-05-10 22:12:25.591 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:12:32.103 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Perspective] What would your closest friend do?
+2026-05-10 22:12:32.104 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:12:41.271 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Attention] Where does the wind go when it stops?
+2026-05-10 22:12:41.272 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:12:49.273 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Time] Rewrite your history from a different perspective
+2026-05-10 22:12:49.273 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:12:55.867 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Subtraction] Reduce until it breaks
+2026-05-10 22:12:55.867 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:13:04.790 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Attention] Trace the unseen lines
+2026-05-10 22:13:04.790 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:13:13.666 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Constraint] Make it for someone who will never see it
+2026-05-10 22:13:13.666 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:13:22.893 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Displacement] Change the genre
+2026-05-10 22:13:22.893 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:13:31.666 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Reality Check] What's the real question?
+2026-05-10 22:13:31.666 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:13:36.463 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Attention] Let the peripheral become central
+2026-05-10 22:13:36.463 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:13:46.005 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Reduction] Find the atom of it
+2026-05-10 22:13:46.007 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:13:51.081 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Displacement] Make it fictional
+2026-05-10 22:13:51.082 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:14:00.008 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Subtraction] What's left when you take everything away?
+2026-05-10 22:14:00.009 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:14:06.559 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Courage] Do the thing you keep not doing
+2026-05-10 22:14:06.559 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:14:15.423 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Acceptance] Ruin it a little
+2026-05-10 22:14:15.423 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:14:21.918 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Reality Check] What rules are you following?
+2026-05-10 22:14:21.918 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:14:27.008 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Time] Start with an ending
+2026-05-10 22:14:27.008 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:14:35.192 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Perspective] What would the work say about you?
+2026-05-10 22:14:35.192 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:14:43.267 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Acceptance] Transform a wound into a doorway
+2026-05-10 22:14:43.267 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:14:49.487 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Displacement] Make it a riddle
+2026-05-10 22:14:49.487 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:15:02.757 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Time] What's its future?
+2026-05-10 22:15:02.757 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:15:10.562 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Perspective] Who would disapprove?
+2026-05-10 22:15:10.563 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:15:15.660 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Process] Trust the process, not the plan
+2026-05-10 22:15:15.660 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:15:21.883 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Displacement] Sketch the architecture of a feeling
+2026-05-10 22:15:21.883 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:15:29.273 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Reduction] Name the one thing that cannot be removed
+2026-05-10 22:15:29.274 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:15:37.467 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Perspective] Listen with your fingertips
+2026-05-10 22:15:37.467 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:15:46.059 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Attention] What is its shadow?
+2026-05-10 22:15:46.059 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:15:55.910 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Courage] Make art for no one
+2026-05-10 22:15:55.910 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:16:04.150 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Process] Build a bridge to nowhere
+2026-05-10 22:16:04.150 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:16:13.769 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Subtraction] Remove the expected
+2026-05-10 22:16:13.770 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:16:22.659 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Attention] Find the center
+2026-05-10 22:16:22.659 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:16:32.386 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Perspective] Dissolve the boundary between you and not-you
+2026-05-10 22:16:32.386 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:16:41.367 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Constraint] Add something that doesn't belong
+2026-05-10 22:16:41.367 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:16:49.962 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Courage] What if failure is the path?
+2026-05-10 22:16:49.962 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:16:54.485 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Acceptance] Find beauty in what repels you
+2026-05-10 22:16:54.485 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:17:04.372 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Time] What exists before the beginning?
+2026-05-10 22:17:04.372 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:17:13.897 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Reduction] Name the one thing that cannot be removed
+2026-05-10 22:17:13.897 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:17:29.679 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Displacement] Change the location
+2026-05-10 22:17:29.680 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:17:38.682 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Process] Let the broken pieces rearrange themselves
+2026-05-10 22:17:38.682 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:17:48.100 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Attention] Trace the unseen lines
+2026-05-10 22:17:48.100 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:17:57.100 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Constraint] Make it for a stranger
+2026-05-10 22:17:57.101 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:18:04.764 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Reduction] Do one thing, completely
+2026-05-10 22:18:04.765 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:18:13.187 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Displacement] Draw it instead
+2026-05-10 22:18:13.187 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:18:17.604 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Courage] Make art for no one
+2026-05-10 22:18:17.605 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 22:18:26.186 I  Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:engine] card #10 [curated] [Inversion] Tell it backward
+2026-05-10 22:18:26.186 Db Reflect TV[64507:30c25b] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false

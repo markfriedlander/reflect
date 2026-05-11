@@ -20,6 +20,9 @@
 #if os(watchOS)
 import SwiftUI
 import WatchKit
+import os
+
+private let watchLog = Logger(subsystem: "com.MarkFriedlander.Reflect", category: "watch")
 
 struct WatchContentView: View {
 
@@ -54,6 +57,7 @@ struct WatchContentView: View {
 
     private func handleTap() {
         WKInterfaceDevice.current().play(.click)
+        watchLog.info("haptic .click fired")
         if !reduceMotion {
             withAnimation(.easeInOut(duration: 0.15)) { scale = 1.08 }
             Task { @MainActor in

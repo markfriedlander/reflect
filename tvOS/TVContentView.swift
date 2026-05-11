@@ -135,6 +135,17 @@ struct TVContentView: View {
 
     /// Variable dwell shaped by a 24-sided roll. See header for distribution.
     private func nextDwellSeconds() -> Double {
+        #if DEBUG && os(tvOS)
+        // QA mode: tight dwell so we can observe many transitions quickly.
+        // Reverted before ship — see HISTORY for QA log.
+        if ProcessInfo.processInfo.environment["REFLECT_TV_QA_DWELL"] == "1" {
+            switch Int.random(in: 0..<24) {
+            case 0..<2:  return Double.random(in: 2...3)
+            case 2..<5:  return Double.random(in: 10...14)
+            default:     return Double.random(in: 4...8)
+            }
+        }
+        #endif
         switch Int.random(in: 0..<24) {
         case 0..<2:  return Double.random(in: 60...90)        // quick flip
         case 2..<5:  return Double.random(in: 360...540)      // long hold

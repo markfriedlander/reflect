@@ -1,0 +1,28 @@
+getpwuid_r did not find a match for uid 501
+Filtering the log data using "subsystem == "com.MarkFriedlander.Reflect""
+Timestamp               Ty Process[PID:TID]
+2026-05-10 22:04:21.852 I  Reflect[64147:30b068] [com.MarkFriedlander.Reflect:engine] card #3 [curated] [Courage] Destroy something
+2026-05-10 22:04:21.900 Db Reflect[64147:30b068] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=true
+2026-05-10 22:04:21.900 I  Reflect[64147:30b068] [com.MarkFriedlander.Reflect:afm] refill start needed=5
+2026-05-10 22:04:21.900 Db Reflect[64147:30b068] [com.MarkFriedlander.Reflect:view-ios] advance reduceMotion=true
+2026-05-10 22:04:26.477 E  Reflect[64147:30b068] [com.MarkFriedlander.Reflect:afm] generation error [Time] attempt 1: The operation couldn’t be completed. (FoundationModels.LanguageModelSession.GenerationError error -1.)
+2026-05-10 22:04:28.322 E  Reflect[64147:30b068] [com.MarkFriedlander.Reflect:afm] generation error [Time] attempt 2: The operation couldn’t be completed. (FoundationModels.LanguageModelSession.GenerationError error -1.)
+2026-05-10 22:04:28.953 E  Reflect[64147:30b068] [com.MarkFriedlander.Reflect:afm] generation error [Time] attempt 3: The operation couldn’t be completed. (FoundationModels.LanguageModelSession.GenerationError error -1.)
+2026-05-10 22:04:28.953 Df Reflect[64147:30b068] [com.MarkFriedlander.Reflect:afm] generated [Time] all retries failed
+2026-05-10 22:04:29.501 E  Reflect[64147:30b068] [com.MarkFriedlander.Reflect:afm] generation error [Constraint] attempt 1: The operation couldn’t be completed. (FoundationModels.LanguageModelSession.GenerationError error -1.)
+2026-05-10 22:04:30.067 E  Reflect[64147:30b068] [com.MarkFriedlander.Reflect:afm] generation error [Constraint] attempt 2: The operation couldn’t be completed. (FoundationModels.LanguageModelSession.GenerationError error -1.)
+2026-05-10 22:04:30.646 E  Reflect[64147:30b068] [com.MarkFriedlander.Reflect:afm] generation error [Constraint] attempt 3: The operation couldn’t be completed. (FoundationModels.LanguageModelSession.GenerationError error -1.)
+2026-05-10 22:04:30.646 Df Reflect[64147:30b068] [com.MarkFriedlander.Reflect:afm] generated [Constraint] all retries failed
+2026-05-10 22:04:31.297 E  Reflect[64147:30b068] [com.MarkFriedlander.Reflect:afm] generation error [Time] attempt 1: The operation couldn’t be completed. (FoundationModels.LanguageModelSession.GenerationError error -1.)
+2026-05-10 22:04:31.819 E  Reflect[64147:30b068] [com.MarkFriedlander.Reflect:afm] generation error [Time] attempt 2: The operation couldn’t be completed. (FoundationModels.LanguageModelSession.GenerationError error -1.)
+2026-05-10 22:04:32.618 E  Reflect[64147:30b068] [com.MarkFriedlander.Reflect:afm] generation error [Time] attempt 3: The operation couldn’t be completed. (FoundationModels.LanguageModelSession.GenerationError error -1.)
+2026-05-10 22:04:32.618 Df Reflect[64147:30b068] [com.MarkFriedlander.Reflect:afm] generated [Time] all retries failed
+2026-05-10 22:04:33.286 E  Reflect[64147:30b068] [com.MarkFriedlander.Reflect:afm] generation error [Perspective] attempt 1: The operation couldn’t be completed. (FoundationModels.LanguageModelSession.GenerationError error -1.)
+2026-05-10 22:04:33.877 E  Reflect[64147:30b068] [com.MarkFriedlander.Reflect:afm] generation error [Perspective] attempt 2: The operation couldn’t be completed. (FoundationModels.LanguageModelSession.GenerationError error -1.)
+2026-05-10 22:04:34.271 E  Reflect[64147:30b068] [com.MarkFriedlander.Reflect:afm] generation error [Perspective] attempt 3: The operation couldn’t be completed. (FoundationModels.LanguageModelSession.GenerationError error -1.)
+2026-05-10 22:04:34.271 Df Reflect[64147:30b068] [com.MarkFriedlander.Reflect:afm] generated [Perspective] all retries failed
+2026-05-10 22:04:34.743 E  Reflect[64147:30b068] [com.MarkFriedlander.Reflect:afm] generation error [Time] attempt 1: The operation couldn’t be completed. (FoundationModels.LanguageModelSession.GenerationError error -1.)
+2026-05-10 22:04:35.239 E  Reflect[64147:30b068] [com.MarkFriedlander.Reflect:afm] generation error [Time] attempt 2: The operation couldn’t be completed. (FoundationModels.LanguageModelSession.GenerationError error -1.)
+2026-05-10 22:04:35.714 E  Reflect[64147:30b068] [com.MarkFriedlander.Reflect:afm] generation error [Time] attempt 3: The operation couldn’t be completed. (FoundationModels.LanguageModelSession.GenerationError error -1.)
+2026-05-10 22:04:35.714 Df Reflect[64147:30b068] [com.MarkFriedlander.Reflect:afm] generated [Time] all retries failed
+2026-05-10 22:04:35.714 I  Reflect[64147:30b068] [com.MarkFriedlander.Reflect:afm] refill done size=0

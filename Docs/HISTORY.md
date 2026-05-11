@@ -192,3 +192,42 @@ App Store Connect records and provisioning profiles.
 **Open-source status confirmed.** Repo is public at
 `github.com/markfriedlander/reflect`. MIT licensed. Note added to
 CLAUDE.md and HANDOFF_BRIEF.md.
+
+## 2026-05-10/11 — Thorough QA pass (after Mark called out the previous one as incomplete)
+
+Previous QA was shallow — three taps in a sim, one TV screenshot, no
+hardware, no AFM verification, no Reduce Motion or Dynamic Type check.
+Mark was right.
+
+This pass added real instrumentation:
+- `os.Logger` instrumentation in PromptEngine, AFMPromptGenerator,
+  ContentView (iOS), WatchContentView. Subsystem
+  `com.MarkFriedlander.Reflect`, debug-streamable via `simctl log stream`.
+- File-based AFM event logging (`Documents/afm_qa.log`, DEBUG-only) so
+  AFM behavior on real device hardware can be inspected via
+  `devicectl device copy from`.
+- `Tools/EngineStress.swift` — re-implements the engine logic and runs
+  50 draws to audit move distribution and back-to-back-violation rate.
+- `REFLECT_TV_QA_DWELL=1` env var shortens TV dwell to 2–14s so 10+
+  transitions can be observed in 90 seconds. Production-safe (gated
+  behind #if DEBUG && env check).
+
+Real results, all documented in [Docs/QA_REPORT.md](QA_REPORT.md):
+- Engine: 50 draws, 0 same-move-back-to-back, 0 in-window repeats, 47/50
+  unique. One observation: popular cards can resurface with gap >10,
+  filed as future tuning candidate.
+- iOS sim: tap-to-advance verified, Dynamic Type accessibility-xxxLarge
+  wraps cleanly, Reduce Motion confirmed via log evidence.
+- tvOS sim: 10 cards in 81s under QA dwell, fade-to-black sequences
+  captured visually, cluster avoidance holds.
+- watchOS sim: haptic `.click` confirmed firing 1:1 with taps via log
+  evidence. On real watch = felt.
+- **iPhone 16 Plus hardware (Mark's phone): AFM verified working.**
+  `isAvailable=true`, buffer fills 5 distinct moves in ~24s, validator
+  catches library dedup ("What are you avoiding?" rejected), retry
+  logic recovers, generated voice is right (e.g. "Use only white",
+  "Dance with uncertainty"). Real evidence at
+  [Tools/runs/iphone_afm_real.log](../Tools/runs/iphone_afm_real.log).
+- Mac: build configuration verified correct
+  (`SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES`). Runtime launch from
+  CLI not possible — Mark to verify via Xcode My Mac destination.

@@ -18,10 +18,13 @@
 
 import Foundation
 import Observation
+import os
 
 @MainActor
 @Observable
 final class PromptEngine {
+
+    private static let log = Logger(subsystem: "com.MarkFriedlander.Reflect", category: "engine")
 
     private let curated: [PromptCard]
     private let curatedTexts: Set<String>
@@ -42,8 +45,9 @@ final class PromptEngine {
     /// Returns the next prompt's text. Updates history and triggers AFM
     /// buffer refill in the background. Safe to call from any view event.
     func next() -> String {
-        let prompt = chooseNext()
+        let (prompt, source) = chooseNext()
         record(prompt)
+        Self.log.info("card #\(self.recentHistory.count) [\(source, privacy: .public)] [\(prompt.primaryMove?.rawValue ?? "?", privacy: .public)] \(prompt.text, privacy: .public)")
         afm?.refillIfNeeded(
             avoidingMoves: recentMoves(count: 3),
             avoidingTexts: curatedTexts
@@ -53,11 +57,11 @@ final class PromptEngine {
 
     // MARK: - Selection
 
-    private func chooseNext() -> PromptCard {
+    private func chooseNext() -> (PromptCard, String) {
         if let afm, let generated = afm.takeNext() {
-            return generated
+            return (generated, "afm")
         }
-        return chooseFromCurated()
+        return (chooseFromCurated(), "curated")
     }
 
     private func chooseFromCurated() -> PromptCard {

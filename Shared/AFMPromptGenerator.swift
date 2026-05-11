@@ -36,12 +36,36 @@
 //
 
 import Foundation
+import os
 #if canImport(FoundationModels)
 import FoundationModels
 #endif
 
 @MainActor
 final class AFMPromptGenerator {
+
+    private static let log = Logger(subsystem: "com.MarkFriedlander.Reflect", category: "afm")
+
+    /// Writes a single line to <Documents>/afm_qa.log. Debug only. Lets us
+    /// pull the log off a real device via `devicectl device copy from` to
+    /// verify AFM behavior on hardware where os_log isn't streamable from
+    /// the command line.
+    nonisolated private static func qa(_ line: String) {
+        #if DEBUG
+        let docs = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
+        guard let url = docs?.appendingPathComponent("afm_qa.log") else { return }
+        let stamp = ISO8601DateFormatter().string(from: Date())
+        let payload = "\(stamp) \(line)\n".data(using: .utf8) ?? Data()
+        if FileManager.default.fileExists(atPath: url.path),
+           let handle = try? FileHandle(forWritingTo: url) {
+            try? handle.seekToEnd()
+            try? handle.write(contentsOf: payload)
+            try? handle.close()
+        } else {
+            try? payload.write(to: url)
+        }
+        #endif
+    }
 
     // MARK: - Tunables
 
@@ -181,10 +205,14 @@ final class AFMPromptGenerator {
     static var isAvailable: Bool {
         #if canImport(FoundationModels)
         if #available(iOS 26.0, macOS 26.0, *) {
-            return SystemLanguageModel.default.isAvailable
+            let available = SystemLanguageModel.default.isAvailable
+            qa("isAvailable=\(available)")
+            return available
         }
+        qa("isAvailable=false (os version)")
         return false
         #else
+        qa("isAvailable=false (no FoundationModels)")
         return false
         #endif
     }
@@ -201,14 +229,17 @@ final class AFMPromptGenerator {
     /// Kicks off a background refill if the buffer has dropped to the
     /// threshold. Returns immediately. Never blocks. Silent on failure.
     func refillIfNeeded(avoidingMoves: [Move], avoidingTexts: Set<String>) {
+        let available = Self.isAvailable
+        Self.log.debug("refill check buffer=\(self.buffer.count) refilling=\(self.isRefilling) available=\(available)")
         guard !isRefilling,
               buffer.count <= refillThreshold,
-              Self.isAvailable else { return }
+              available else { return }
 
         isRefilling = true
         let needed = bufferTarget - buffer.count
         let recentMoves = avoidingMoves
         let curatedTexts = avoidingTexts
+        Self.log.info("refill start needed=\(needed)")
 
         Task(priority: .background) { [weak self] in
             guard let self else { return }
@@ -218,9 +249,11 @@ final class AFMPromptGenerator {
                     avoidingTexts: curatedTexts
                 ) {
                     self.buffer.append(card)
+                    Self.log.info("buffer append [\(card.primaryMove?.rawValue ?? "?", privacy: .public)] \(card.text, privacy: .public) (size=\(self.buffer.count))")
                 }
             }
             self.isRefilling = false
+            Self.log.info("refill done size=\(self.buffer.count)")
         }
     }
 
@@ -247,19 +280,27 @@ final class AFMPromptGenerator {
             maximumResponseTokens: Self.maximumResponseTokens
         )
 
-        for _ in 0..<Self.maxRetriesPerSlot {
+        for attempt in 1...Self.maxRetriesPerSlot {
             do {
                 let session = LanguageModelSession(instructions: instructions)
                 let response = try await session.respond(to: userPrompt, options: options)
-                let text = Self.clean(response.content)
+                let raw = response.content
+                let text = Self.clean(raw)
                 if Self.validate(text: text, curatedTexts: curatedTexts) {
+                    Self.log.info("generated [\(move.rawValue, privacy: .public)] attempt \(attempt) ok: \(text, privacy: .public)")
+                    Self.qa("gen [\(move.rawValue)] attempt \(attempt) ok: \(text)")
                     return PromptCard(text, move)
+                } else {
+                    Self.log.notice("generated [\(move.rawValue, privacy: .public)] attempt \(attempt) rejected: \(text, privacy: .public)")
+                    Self.qa("gen [\(move.rawValue)] attempt \(attempt) rejected: \(text)")
                 }
             } catch {
-                // Silent fallback per spec — engine pulls from curated instead.
+                Self.log.error("generation error [\(move.rawValue, privacy: .public)] attempt \(attempt): \(error.localizedDescription, privacy: .public)")
+                Self.qa("gen [\(move.rawValue)] attempt \(attempt) ERROR: \(error.localizedDescription)")
                 continue
             }
         }
+        Self.log.notice("generated [\(move.rawValue, privacy: .public)] all retries failed")
         return nil
         #else
         return nil

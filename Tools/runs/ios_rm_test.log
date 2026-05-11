@@ -1,0 +1,24 @@
+getpwuid_r did not find a match for uid 501
+Filtering the log data using "subsystem == "com.MarkFriedlander.Reflect""
+Timestamp               Ty Process[PID:TID]
+2026-05-10 22:03:40.421 E  Reflect[64147:30b068] [com.MarkFriedlander.Reflect:afm] generation error [Displacement] attempt 1: The operation couldn’t be completed. (FoundationModels.LanguageModelSession.GenerationError error -1.)
+2026-05-10 22:03:41.245 E  Reflect[64147:30b068] [com.MarkFriedlander.Reflect:afm] generation error [Displacement] attempt 2: The operation couldn’t be completed. (FoundationModels.LanguageModelSession.GenerationError error -1.)
+2026-05-10 22:03:41.751 E  Reflect[64147:30b068] [com.MarkFriedlander.Reflect:afm] generation error [Displacement] attempt 3: The operation couldn’t be completed. (FoundationModels.LanguageModelSession.GenerationError error -1.)
+2026-05-10 22:03:41.751 Df Reflect[64147:30b068] [com.MarkFriedlander.Reflect:afm] generated [Displacement] all retries failed
+2026-05-10 22:03:42.440 E  Reflect[64147:30b068] [com.MarkFriedlander.Reflect:afm] generation error [Displacement] attempt 1: The operation couldn’t be completed. (FoundationModels.LanguageModelSession.GenerationError error -1.)
+2026-05-10 22:03:43.032 E  Reflect[64147:30b068] [com.MarkFriedlander.Reflect:afm] generation error [Displacement] attempt 2: The operation couldn’t be completed. (FoundationModels.LanguageModelSession.GenerationError error -1.)
+2026-05-10 22:03:43.727 E  Reflect[64147:30b068] [com.MarkFriedlander.Reflect:afm] generation error [Displacement] attempt 3: The operation couldn’t be completed. (FoundationModels.LanguageModelSession.GenerationError error -1.)
+2026-05-10 22:03:43.727 Df Reflect[64147:30b068] [com.MarkFriedlander.Reflect:afm] generated [Displacement] all retries failed
+2026-05-10 22:03:44.415 E  Reflect[64147:30b068] [com.MarkFriedlander.Reflect:afm] generation error [Process] attempt 1: The operation couldn’t be completed. (FoundationModels.LanguageModelSession.GenerationError error -1.)
+2026-05-10 22:03:44.941 E  Reflect[64147:30b068] [com.MarkFriedlander.Reflect:afm] generation error [Process] attempt 2: The operation couldn’t be completed. (FoundationModels.LanguageModelSession.GenerationError error -1.)
+2026-05-10 22:03:45.450 E  Reflect[64147:30b068] [com.MarkFriedlander.Reflect:afm] generation error [Process] attempt 3: The operation couldn’t be completed. (FoundationModels.LanguageModelSession.GenerationError error -1.)
+2026-05-10 22:03:45.450 Df Reflect[64147:30b068] [com.MarkFriedlander.Reflect:afm] generated [Process] all retries failed
+2026-05-10 22:03:46.163 E  Reflect[64147:30b068] [com.MarkFriedlander.Reflect:afm] generation error [Reduction] attempt 1: The operation couldn’t be completed. (FoundationModels.LanguageModelSession.GenerationError error -1.)
+2026-05-10 22:03:46.748 E  Reflect[64147:30b068] [com.MarkFriedlander.Reflect:afm] generation error [Reduction] attempt 2: The operation couldn’t be completed. (FoundationModels.LanguageModelSession.GenerationError error -1.)
+2026-05-10 22:03:47.197 E  Reflect[64147:30b068] [com.MarkFriedlander.Reflect:afm] generation error [Reduction] attempt 3: The operation couldn’t be completed. (FoundationModels.LanguageModelSession.GenerationError error -1.)
+2026-05-10 22:03:47.197 Df Reflect[64147:30b068] [com.MarkFriedlander.Reflect:afm] generated [Reduction] all retries failed
+2026-05-10 22:03:48.005 E  Reflect[64147:30b068] [com.MarkFriedlander.Reflect:afm] generation error [Inversion] attempt 1: The operation couldn’t be completed. (FoundationModels.LanguageModelSession.GenerationError error -1.)
+2026-05-10 22:03:48.677 E  Reflect[64147:30b068] [com.MarkFriedlander.Reflect:afm] generation error [Inversion] attempt 2: The operation couldn’t be completed. (FoundationModels.LanguageModelSession.GenerationError error -1.)
+2026-05-10 22:03:49.359 E  Reflect[64147:30b068] [com.MarkFriedlander.Reflect:afm] generation error [Inversion] attempt 3: The operation couldn’t be completed. (FoundationModels.LanguageModelSession.GenerationError error -1.)
+2026-05-10 22:03:49.359 Df Reflect[64147:30b068] [com.MarkFriedlander.Reflect:afm] generated [Inversion] all retries failed
+Child process terminated with signal 15: Terminated
