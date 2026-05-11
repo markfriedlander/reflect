@@ -29,7 +29,7 @@ final class PromptEngine {
     private let curated: [PromptCard]
     private let curatedTexts: Set<String>
     private let afm: AFMPromptGenerator?
-    private let historyLimit = 10
+    private let historyLimit = 30
 
     private(set) var recentHistory: [PromptCard] = []
 

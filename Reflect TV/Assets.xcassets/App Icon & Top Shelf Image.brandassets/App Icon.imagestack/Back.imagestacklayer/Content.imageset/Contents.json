@@ -1,14 +1,8 @@
 {
   "images" : [
     {
-      "filename" : "Background@1x.png",
-      "idiom" : "tv",
-      "scale" : "1x"
-    },
-    {
-      "filename" : "Background@2x.png",
-      "idiom" : "tv",
-      "scale" : "2x"
+      "filename" : "Reflect TV 400x240 flat.png",
+      "idiom" : "tv"
     }
   ],
   "info" : {

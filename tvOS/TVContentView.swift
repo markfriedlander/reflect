@@ -44,36 +44,40 @@ struct TVContentView: View {
     private let launchTitleHold: Double = 2.5
 
     var body: some View {
-        ZStack {
-            Color.black.ignoresSafeArea()
+        // Use a Button so the tvOS focus engine and remote-Select binding
+        // are handled natively, rather than relying on .focusable() +
+        // .onTapGesture which can fail to register Select presses if focus
+        // isn't actively held by the view.
+        Button(action: { advanceImmediately() }) {
+            ZStack {
+                Color.black.ignoresSafeArea()
 
-            Group {
-                if showLaunchTitle {
-                    Text("Reflect: Creative Sparks")
-                        .font(.system(.largeTitle, design: .default).weight(.regular))
-                } else {
-                    Text(currentText)
-                        .font(.system(.largeTitle, design: .default).weight(.regular))
-                        .id(currentText)
+                Group {
+                    if showLaunchTitle {
+                        Text("Reflect: Creative Sparks")
+                            .font(.system(.largeTitle, design: .default).weight(.regular))
+                    } else {
+                        Text(currentText)
+                            .font(.system(.largeTitle, design: .default).weight(.regular))
+                            .id(currentText)
+                    }
                 }
+                .foregroundStyle(.white)
+                .multilineTextAlignment(.center)
+                .padding(.horizontal, 120)
+                .frame(maxWidth: 1400)
+                .opacity(isVisible ? 1 : 0)
+                .animation(reduceMotion ? nil : .easeInOut(duration: fadeDuration),
+                           value: isVisible)
             }
-            .foregroundStyle(.white)
-            .multilineTextAlignment(.center)
-            .padding(.horizontal, 120)
-            .frame(maxWidth: 1400)
-            .opacity(isVisible ? 1 : 0)
-            .animation(reduceMotion ? nil : .easeInOut(duration: fadeDuration),
-                       value: isVisible)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
-        .focusable()
+        .buttonStyle(.plain)
         .focusEffectDisabled()
-        .onTapGesture { advanceImmediately() }
-        .accessibilityElement(children: .ignore)
         .accessibilityLabel(showLaunchTitle ? "Reflect: Creative Sparks"
                                             : (currentText.isEmpty ? "Reflect" : currentText))
         .accessibilityHint("Press the remote to show the next card.")
-        .accessibilityAddTraits([.isButton, .updatesFrequently])
-        .accessibilityAction { advanceImmediately() }
+        .accessibilityAddTraits(.updatesFrequently)
         .onAppear { startSequence() }
         .onDisappear {
             rotationTask?.cancel()

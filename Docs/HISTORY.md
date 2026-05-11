@@ -231,3 +231,39 @@ Real results, all documented in [Docs/QA_REPORT.md](QA_REPORT.md):
 - Mac: build configuration verified correct
   (`SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES`). Runtime launch from
   CLI not possible — Mark to verify via Xcode My Mac destination.
+
+## 2026-05-11 — Sensitivity revisions + safety layer + tvOS Button refactor
+
+Mark's review surfaced three things to fix:
+1. Two Courage cards too close to self-harm imagery ("Give way to your
+   worst impulse", "Destroy something") — cut. Eight added: "Rip it up
+   and start again", "Do the thing you've been putting off", "Act
+   before you're ready", "Say the thing out loud", "Go further than
+   feels comfortable", "Commit completely", "Make it irreversible",
+   "Go all the way". **Library now 197.**
+2. History window of 10 was too short — bumped to 30. With 197 cards,
+   no reason to ever repeat within a session. Re-ran 50-draw stress:
+   **50/50 unique cards**, distribution still fair.
+3. AFM needed real safety, not just keyword-style banned vocab. Added
+   two layers:
+   - **Layer 1** — banned phrases ("worst thought", "worst impulse",
+     "worst self", "darkest", "destroy", "harm", "pain", "rip it up").
+     Substring match, case-insensitive.
+   - **Layer 2** — independent AFM safety classifier (Mark's exact
+     prompt). Strict YES/NO output, fail-safe to discard on any error
+     or ambiguous response. When all retries fail, slot falls back to
+     curated. Verified on real iPhone hardware: layer 2 is conservative
+     (rejects some benign prompts), which is the correct behavior per
+     spec ("user never sees any of this").
+
+Also caught during QA: my tvOS `.focusable().onTapGesture` pattern was
+not reliably catching remote Select. Refactored TVContentView to a
+native `Button { } label: { ... }.buttonStyle(.plain).focusEffectDisabled()`,
+which plays correctly with tvOS focus + remote SELECT bindings while
+preserving the no-chrome ambient look. Verified via `idb ui key 40` —
+5 sequential remote selects advanced 5 cards across 5 different moves.
+
+Mac runtime test attempted via 5 different CLI invocations; all failed.
+Apple has restricted iPhone-binary-on-Mac launch to Xcode's GUI Run
+flow or Mac App Store install. Build configuration is correct; Mark to
+do the final GUI run check.

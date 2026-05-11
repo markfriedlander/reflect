@@ -1,0 +1,12 @@
+getpwuid_r did not find a match for uid 501
+Filtering the log data using "subsystem == "com.MarkFriedlander.Reflect""
+Timestamp               Ty Process[PID:TID]
+2026-05-10 22:51:22.231 I  Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:engine] card #1 [curated] [Inversion] Begin at the end
+2026-05-10 22:51:33.631 I  Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:engine] card #2 [curated] [Attention] Notice what you always overlook
+2026-05-10 22:51:44.425 I  Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:engine] card #3 [curated] [Process] Follow what feels alive, not what feels correct
+2026-05-10 22:51:46.727 I  Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:engine] card #4 [curated] [Courage] Ignore logic
+2026-05-10 22:51:49.003 I  Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:engine] card #5 [curated] [Subtraction] Find the quietest version
+2026-05-10 22:51:51.228 I  Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:engine] card #6 [curated] [Attention] Listen to the hum beneath the noise
+2026-05-10 22:51:53.468 I  Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:engine] card #7 [curated] [Time] Walk backward into the future
+2026-05-10 22:55:59.154 I  Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:engine] card #8 [curated] [Reality Check] What happens when you pause?
+2026-05-10 22:59:12.530 I  Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:engine] card #9 [curated] [Acceptance] Make it feel accidental

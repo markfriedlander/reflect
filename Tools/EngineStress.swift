@@ -63,7 +63,7 @@ print("Loaded \(library.count) cards from Shared/Prompts.swift\n")
 final class Engine {
     let curated: [Card]
     var history: [Card] = []
-    let historyLimit = 10
+    let historyLimit = 30
 
     init(_ curated: [Card]) { self.curated = curated }
 
@@ -129,7 +129,7 @@ print("Back-to-back same-move violations: \(backToBack)")
 // Text repeats within history window
 var repeats = 0
 for i in 0..<sequence.count {
-    let lo = max(0, i - 10)
+    let lo = max(0, i - 30)
     for j in lo..<i {
         if sequence[i].text == sequence[j].text {
             repeats += 1

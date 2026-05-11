@@ -143,10 +143,8 @@ let curatedPrompts: [PromptCard] = [
     // MARK: - Courage [Move 10]
     PromptCard("Try the impossible", .courage),
     PromptCard("Ignore logic", .courage),
-    PromptCard("Give way to your worst impulse", .courage),
     PromptCard("Make it brutal", .courage),
     PromptCard("Make it shout", .courage),
-    PromptCard("Destroy something", .courage),
     PromptCard("Resurrect something", .courage),
     PromptCard("Break your routine", .courage),
     PromptCard("Make art for no one", .courage),
@@ -155,6 +153,14 @@ let curatedPrompts: [PromptCard] = [
     PromptCard("What if failure is the path?", .courage),
     PromptCard("What would you create if you couldn't fail?", .courage),
     PromptCard("Speak your desire without editing", .courage),
+    PromptCard("Rip it up and start again", .courage),
+    PromptCard("Do the thing you've been putting off", .courage),
+    PromptCard("Act before you're ready", .courage),
+    PromptCard("Say the thing out loud", .courage),
+    PromptCard("Go further than feels comfortable", .courage),
+    PromptCard("Commit completely", .courage),
+    PromptCard("Make it irreversible", .courage),
+    PromptCard("Go all the way", .courage),
 
     // MARK: - Process [Move 11]
     PromptCard("Just carry on", .process),

@@ -152,6 +152,78 @@ gen [Process]       attempt 1 ok:       Dance with uncertainty
 
 ---
 
+---
+
+## 2026-05-11 — Second pass (post-sensitivity revisions)
+
+After Mark's sensitivity feedback: cut 2 cards from Courage, added 8,
+library now 197. History window 10 → 30. AFM safety: expanded banned
+phrases + added a second-pass AFM safety classifier.
+
+### Library + engine re-stress
+Re-ran 50-draw engine harness with window=30:
+- **50 / 50 unique cards** (was 47/50 with window=10)
+- **0 same-move back-to-back violations**
+- **0 in-window repeats**
+- Distribution: Time low at 1, others 2–7. Long-tail freshness clearly
+  improved.
+
+### AFM safety pipeline — verified on iPhone 16 Plus
+- **Layer 1 (validator)** now blocks: `worst thought`, `worst impulse`,
+  `worst self`, `darkest`, `destroy`, `harm`, `pain`, `rip it up`.
+  Previously-shipped output "Repeat your worst thought aloud" would
+  now be rejected by this layer.
+- **Layer 2 (second-pass AFM safety classifier)** is independent AFM
+  call with Mark's exact prompt: "Does the following creative prompt
+  direct someone toward self-harm, their worst thoughts, darkness,
+  pain, or destructive impulses? Answer only YES or NO."
+- Tested live on real hardware. Found classifier to be conservative —
+  rejects benign prompts like "Pause the clock" and "Create a timeline".
+  **This is fine.** When all retries fail, buffer slot stays empty and
+  engine pulls curated. User never sees a bad prompt. AFM contribution
+  to buffer is sparser when safety triggers, but quality bar is
+  preserved. This matches Mark's spec: "If retry also fails — pull
+  from curated library for that slot. User never sees any of this."
+- Logged failures from real iPhone (Tools/runs/iphone_afm_real.log,
+  later session): safety rejections are tagged `rejected (safety)`
+  vs validator rejections tagged just `rejected`.
+
+### tvOS remote-click verification (real, this time)
+Refactored TVContentView from `.focusable().onTapGesture` to native
+`Button { } label: { ... }.buttonStyle(.plain).focusEffectDisabled()`.
+The Button approach plays correctly with the tvOS focus engine and
+remote SELECT bindings, while preserving the no-chrome ambient look
+via `.buttonStyle(.plain)` and `.focusEffectDisabled()`.
+
+Verified via `idb ui key 40` (HID Return = remote Select): 5 sequential
+selects advanced 5 cards across 5 different moves. Engine log evidence:
+- Card #1: Inversion / Begin at the end
+- Card #2: Attention / Notice what you always overlook
+- Card #3: Process / Follow what feels alive...
+- Card #4: Courage / Ignore logic
+- Card #5: Subtraction / Find the quietest version
+- Card #6: Attention / Listen to the hum beneath the noise
+- Card #7: Time / Walk backward into the future
+
+### Mac runtime — verified build, NOT verified runtime
+**Honest:** I tried 5 different approaches to launch the iPhone-binary
+on Mac from CLI. All failed. Apple has architecturally restricted iOS
+apps running on Mac to Xcode's GUI Run flow or Mac App Store install:
+- `xcodebuild build` for the macOS,variant=Designed for iPad
+  destination: ✅ succeeds (config correct)
+- `open Reflect.app` on the iphoneos product: ✗ "incorrect executable format"
+- `lsregister -f` + `open -b com.MarkFriedlander.Reflect`: ✗ LaunchServices
+  can't find the bundle (iOS .app isn't registered for Mac launch)
+- `xcodebuild archive` for Mac variant: ✗ "no destinations allow archive"
+- Searched filesystem for any iOS-on-Mac launcher tool in Xcode bundle: nothing public
+
+**Mark's final-check step:** Xcode → scheme menu → "My Mac (Designed
+for iPhone)" → Run button. Build config is verified correct
+(`SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES`), so the GUI run should
+just work.
+
+This is a genuine tooling limit, not an incomplete test.
+
 ## Things I did not test (and why)
 
 - **TV remote-click on real hardware** — sim doesn't have remote, needs an Apple TV.

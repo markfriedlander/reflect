@@ -58,9 +58,13 @@ final class AFMPromptGenerator {
         let payload = "\(stamp) \(line)\n".data(using: .utf8) ?? Data()
         if FileManager.default.fileExists(atPath: url.path),
            let handle = try? FileHandle(forWritingTo: url) {
-            try? handle.seekToEnd()
-            try? handle.write(contentsOf: payload)
-            try? handle.close()
+            do {
+                try handle.seekToEnd()
+                try handle.write(contentsOf: payload)
+                try handle.close()
+            } catch {
+                // QA telemetry — silent failure is fine.
+            }
         } else {
             try? payload.write(to: url)
         }
@@ -124,6 +128,26 @@ final class AFMPromptGenerator {
     private static let bannedWords: Set<String> = [
         "journey", "transform", "embrace", "soul", "authentic",
         "growth", "heal", "manifest", "radical", "surrender", "self-care"
+    ]
+
+    /// Multi-word phrases that the model occasionally produces and that we
+    /// don't want anywhere in the output. Some are tonal (motivational tic),
+    /// others are safety (anything pointing toward darkness or self-harm).
+    /// Matched as case-insensitive substring on the cleaned output.
+    private static let bannedPhrases: [String] = [
+        // Safety — never direct a user toward self-harm or destructive
+        // impulses. The "Destroy something" / "Give way to your worst
+        // impulse" curated cards were also cut for this reason.
+        "worst thought",
+        "worst impulse",
+        "worst self",
+        "darkest",
+        "destroy",
+        "harm",
+        "pain",
+        // Curated-only — the model shouldn't generate paraphrases of cards
+        // that only work as deliberately-curated entries.
+        "rip it up"
     ]
 
     /// Tokens that name a single creative medium and therefore violate the
@@ -286,14 +310,23 @@ final class AFMPromptGenerator {
                 let response = try await session.respond(to: userPrompt, options: options)
                 let raw = response.content
                 let text = Self.clean(raw)
-                if Self.validate(text: text, curatedTexts: curatedTexts) {
-                    Self.log.info("generated [\(move.rawValue, privacy: .public)] attempt \(attempt) ok: \(text, privacy: .public)")
-                    Self.qa("gen [\(move.rawValue)] attempt \(attempt) ok: \(text)")
-                    return PromptCard(text, move)
-                } else {
-                    Self.log.notice("generated [\(move.rawValue, privacy: .public)] attempt \(attempt) rejected: \(text, privacy: .public)")
+                guard Self.validate(text: text, curatedTexts: curatedTexts) else {
+                    Self.log.notice("generated [\(move.rawValue, privacy: .public)] attempt \(attempt) rejected (validator): \(text, privacy: .public)")
                     Self.qa("gen [\(move.rawValue)] attempt \(attempt) rejected: \(text)")
+                    continue
                 }
+                // Second-pass safety check — independent AFM call asks the
+                // model to flag anything that points at self-harm or
+                // destructive impulses. Defence in depth: the validator
+                // catches keywords, this catches semantics.
+                if await Self.failsSafetyCheck(text: text) {
+                    Self.log.notice("generated [\(move.rawValue, privacy: .public)] attempt \(attempt) rejected (safety): \(text, privacy: .public)")
+                    Self.qa("gen [\(move.rawValue)] attempt \(attempt) rejected (safety): \(text)")
+                    continue
+                }
+                Self.log.info("generated [\(move.rawValue, privacy: .public)] attempt \(attempt) ok: \(text, privacy: .public)")
+                Self.qa("gen [\(move.rawValue)] attempt \(attempt) ok: \(text)")
+                return PromptCard(text, move)
             } catch {
                 Self.log.error("generation error [\(move.rawValue, privacy: .public)] attempt \(attempt): \(error.localizedDescription, privacy: .public)")
                 Self.qa("gen [\(move.rawValue)] attempt \(attempt) ERROR: \(error.localizedDescription)")
@@ -304,6 +337,50 @@ final class AFMPromptGenerator {
         return nil
         #else
         return nil
+        #endif
+    }
+
+    // MARK: - Second-pass safety check
+
+    /// Independent AFM call that asks the model to classify whether the
+    /// candidate prompt points at self-harm, darkness, or destructive
+    /// impulses. Returns true if the prompt should be DISCARDED.
+    ///
+    /// On any error (network/availability issue, unparseable response),
+    /// we default to *failing safe* — discard the candidate. The buffer
+    /// just falls back to curated for that slot. Better to lose a slot
+    /// than ship a prompt we couldn't verify.
+    private static func failsSafetyCheck(text: String) async -> Bool {
+        #if canImport(FoundationModels)
+        guard #available(iOS 26.0, macOS 26.0, *) else { return false }
+        let prompt = """
+        Does the following creative prompt direct someone toward self-harm, their worst thoughts, darkness, pain, or destructive impulses? Answer only YES or NO.
+
+        Prompt: \(text)
+        """
+        do {
+            let session = LanguageModelSession(instructions: "You are a content safety classifier. Answer only YES or NO.")
+            let options = GenerationOptions(
+                sampling: nil,
+                temperature: 0.0,
+                maximumResponseTokens: 4
+            )
+            let response = try await session.respond(to: prompt, options: options)
+            let answer = response.content
+                .trimmingCharacters(in: .whitespacesAndNewlines)
+                .uppercased()
+            // Strict matching — any "YES" prefix means discard.
+            // Anything ambiguous also discards (fail safe).
+            if answer.hasPrefix("YES") { return true }
+            if answer.hasPrefix("NO")  { return false }
+            // Unparseable — fail safe.
+            return true
+        } catch {
+            // Classifier errored — fail safe and discard.
+            return true
+        }
+        #else
+        return false
         #endif
     }
 
@@ -347,6 +424,11 @@ final class AFMPromptGenerator {
 
         // Banned vocabulary (motivational/wellness).
         for banned in bannedWords where lower.contains(banned) {
+            return false
+        }
+
+        // Multi-word phrase block — safety vocabulary and curated-only patterns.
+        for phrase in bannedPhrases where lower.contains(phrase) {
             return false
         }
 
