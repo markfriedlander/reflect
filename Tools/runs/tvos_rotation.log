@@ -623,3 +623,35 @@ Timestamp               Ty Process[PID:TID]
 2026-05-10 23:20:57.712 Db Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
 2026-05-10 23:24:16.392 I  Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:engine] card #14 [curated] [Inversion] Tell the emotional lie
 2026-05-10 23:24:16.437 Db Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 23:29:05.995 I  Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:engine] card #15 [curated] [Perspective] Navigate by feeling rather than sight
+2026-05-10 23:29:06.018 Db Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 23:35:47.990 I  Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:engine] card #16 [curated] [Attention] What's too obvious?
+2026-05-10 23:35:48.034 Db Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 23:40:18.483 I  Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:engine] card #17 [curated] [Time] Unravel a memory backward
+2026-05-10 23:40:18.514 Db Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 23:42:50.933 I  Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:engine] card #18 [curated] [Inversion] Tell the opposite story
+2026-05-10 23:42:50.977 Db Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 23:45:24.987 I  Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:engine] card #19 [curated] [Constraint] Make it for someone who will never see it
+2026-05-10 23:45:25.039 Db Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 23:49:34.507 I  Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:engine] card #20 [curated] [Time] Start with a sound
+2026-05-10 23:49:34.564 Db Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-10 23:52:43.896 I  Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:engine] card #21 [curated] [Courage] What would you create if you couldn't fail?
+2026-05-10 23:52:43.911 Db Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-11 00:00:43.016 I  Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:engine] card #22 [curated] [Inversion] Tell it backward
+2026-05-11 00:00:43.158 Db Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-11 00:04:36.120 I  Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:engine] card #23 [curated] [Subtraction] Make the invisible tangible
+2026-05-11 00:04:36.175 Db Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-11 00:08:45.130 I  Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:engine] card #24 [curated] [Displacement] Tell it with a symbol
+2026-05-11 00:08:45.292 Db Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-11 00:12:35.469 I  Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:engine] card #25 [curated] [Attention] What is its shadow?
+2026-05-11 00:12:35.541 Db Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-11 00:16:28.241 I  Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:engine] card #26 [curated] [Constraint] Use a cliché
+2026-05-11 00:16:28.335 Db Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-11 00:19:56.035 I  Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:engine] card #27 [curated] [Attention] What's hiding in plain sight?
+2026-05-11 00:19:56.181 Db Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-11 00:21:20.143 I  Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:engine] card #28 [curated] [Constraint] Add something that doesn't belong
+2026-05-11 00:21:20.209 Db Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-11 00:25:41.007 I  Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:engine] card #29 [curated] [Process] Find the hidden door
+2026-05-11 00:25:41.091 Db Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-11 00:30:13.350 I  Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:engine] card #30 [curated] [Reduction] Find the atom of it
+2026-05-11 00:30:13.496 Db Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false

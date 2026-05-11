@@ -26,3 +26,28 @@ Timestamp               Ty Process[PID:TID]
 2026-05-10 22:04:35.714 E  Reflect[64147:30b068] [com.MarkFriedlander.Reflect:afm] generation error [Time] attempt 3: The operation couldn’t be completed. (FoundationModels.LanguageModelSession.GenerationError error -1.)
 2026-05-10 22:04:35.714 Df Reflect[64147:30b068] [com.MarkFriedlander.Reflect:afm] generated [Time] all retries failed
 2026-05-10 22:04:35.714 I  Reflect[64147:30b068] [com.MarkFriedlander.Reflect:afm] refill done size=0
+2026-05-11 00:08:02.708 I  Reflect[77944:33d4b1] [com.MarkFriedlander.Reflect:engine] card #1 [curated] [Process] Make it feel inevitable
+2026-05-11 00:08:02.873 Db Reflect[77944:33d4b1] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=true
+2026-05-11 00:08:02.873 I  Reflect[77944:33d4b1] [com.MarkFriedlander.Reflect:afm] refill start needed=5
+2026-05-11 00:08:02.873 Db Reflect[77944:33d4b1] [com.MarkFriedlander.Reflect:view-ios] advance reduceMotion=false
+2026-05-11 00:08:42.376 E  Reflect[77944:33d4b1] [com.MarkFriedlander.Reflect:afm] generation error [Time] attempt 1: The operation couldn’t be completed. (FoundationModels.LanguageModelSession.GenerationError error -1.)
+2026-05-11 00:08:43.219 E  Reflect[77944:33d4b1] [com.MarkFriedlander.Reflect:afm] generation error [Time] attempt 2: The operation couldn’t be completed. (FoundationModels.LanguageModelSession.GenerationError error -1.)
+2026-05-11 00:08:53.002 E  Reflect[77944:33d4b1] [com.MarkFriedlander.Reflect:afm] generation error [Time] attempt 3: The operation couldn’t be completed. (FoundationModels.LanguageModelSession.GenerationError error -1.)
+2026-05-11 00:08:53.040 Df Reflect[77944:33d4b1] [com.MarkFriedlander.Reflect:afm] generated [Time] all retries failed
+2026-05-11 00:08:54.299 E  Reflect[77944:33d4b1] [com.MarkFriedlander.Reflect:afm] generation error [Courage] attempt 1: The operation couldn’t be completed. (FoundationModels.LanguageModelSession.GenerationError error -1.)
+2026-05-11 00:08:54.838 E  Reflect[77944:33d4b1] [com.MarkFriedlander.Reflect:afm] generation error [Courage] attempt 2: The operation couldn’t be completed. (FoundationModels.LanguageModelSession.GenerationError error -1.)
+2026-05-11 00:08:55.719 E  Reflect[77944:33d4b1] [com.MarkFriedlander.Reflect:afm] generation error [Courage] attempt 3: The operation couldn’t be completed. (FoundationModels.LanguageModelSession.GenerationError error -1.)
+2026-05-11 00:08:55.721 Df Reflect[77944:33d4b1] [com.MarkFriedlander.Reflect:afm] generated [Courage] all retries failed
+2026-05-11 00:08:56.223 E  Reflect[77944:33d4b1] [com.MarkFriedlander.Reflect:afm] generation error [Constraint] attempt 1: The operation couldn’t be completed. (FoundationModels.LanguageModelSession.GenerationError error -1.)
+2026-05-11 00:08:56.653 E  Reflect[77944:33d4b1] [com.MarkFriedlander.Reflect:afm] generation error [Constraint] attempt 2: The operation couldn’t be completed. (FoundationModels.LanguageModelSession.GenerationError error -1.)
+2026-05-11 00:08:57.579 E  Reflect[77944:33d4b1] [com.MarkFriedlander.Reflect:afm] generation error [Constraint] attempt 3: The operation couldn’t be completed. (FoundationModels.LanguageModelSession.GenerationError error -1.)
+2026-05-11 00:08:57.581 Df Reflect[77944:33d4b1] [com.MarkFriedlander.Reflect:afm] generated [Constraint] all retries failed
+2026-05-11 00:08:58.108 E  Reflect[77944:33d4b1] [com.MarkFriedlander.Reflect:afm] generation error [Courage] attempt 1: The operation couldn’t be completed. (FoundationModels.LanguageModelSession.GenerationError error -1.)
+2026-05-11 00:08:58.820 E  Reflect[77944:33d4b1] [com.MarkFriedlander.Reflect:afm] generation error [Courage] attempt 2: The operation couldn’t be completed. (FoundationModels.LanguageModelSession.GenerationError error -1.)
+2026-05-11 00:08:59.308 E  Reflect[77944:33d4b1] [com.MarkFriedlander.Reflect:afm] generation error [Courage] attempt 3: The operation couldn’t be completed. (FoundationModels.LanguageModelSession.GenerationError error -1.)
+2026-05-11 00:08:59.309 Df Reflect[77944:33d4b1] [com.MarkFriedlander.Reflect:afm] generated [Courage] all retries failed
+2026-05-11 00:09:00.498 E  Reflect[77944:33d4b1] [com.MarkFriedlander.Reflect:afm] generation error [Perspective] attempt 1: The operation couldn’t be completed. (FoundationModels.LanguageModelSession.GenerationError error -1.)
+2026-05-11 00:09:01.104 E  Reflect[77944:33d4b1] [com.MarkFriedlander.Reflect:afm] generation error [Perspective] attempt 2: The operation couldn’t be completed. (FoundationModels.LanguageModelSession.GenerationError error -1.)
+2026-05-11 00:09:01.750 E  Reflect[77944:33d4b1] [com.MarkFriedlander.Reflect:afm] generation error [Perspective] attempt 3: The operation couldn’t be completed. (FoundationModels.LanguageModelSession.GenerationError error -1.)
+2026-05-11 00:09:01.752 Df Reflect[77944:33d4b1] [com.MarkFriedlander.Reflect:afm] generated [Perspective] all retries failed
+2026-05-11 00:09:01.752 I  Reflect[77944:33d4b1] [com.MarkFriedlander.Reflect:afm] refill done size=0

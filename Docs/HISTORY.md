@@ -307,3 +307,81 @@ runtime. Helper at `Tools/mac_run.sh` packages the whole flow:
 Lesson for me: when I hit a wall, "this is impossible" is almost
 always a stand-in for "I don't yet understand this." Should have
 searched or asked rather than concluded.
+
+## 2026-05-11 — Pre-ship sprint: widget, complication, App Store content
+
+Final stretch before submission. Mark's queue, executed in order.
+
+**App Store content** ([Docs/AppStore/APP_STORE_CONTENT.md](AppStore/APP_STORE_CONTENT.md)):
+- Description, subtitle, keywords, What's New, category, age rating,
+  copyright. Mark's exact copy preserved. Mirrors what we'll paste into
+  App Store Connect.
+
+**Privacy + support pages** (root `privacy.html`, `support.html`):
+- Rewrote both in the Pure Phase visual style — black background, white
+  type, wide-tracked uppercase headers, hairline rule as structural
+  element, no chrome. Same family discipline as the app itself.
+- Pages live at GitHub Pages URLs already configured in
+  `APP_STORE_CONTENT.md` (markfriedlander.github.io/reflect/privacy.html
+  and /support.html).
+
+**Icon audit.** Inventoried current set (iOS 20→1024, watchOS 1024,
+tvOS imagestacks + Top Shelf). Confirmed widgets and complications
+need NO new static icons — both render from SwiftUI in the WidgetKit
+timeline. Updated `Tools/generate_icons.sh` header to document this.
+
+**Widget (iOS / iPadOS / Mac)** in [Widget/](../Widget/):
+- New extension target `ReflectWidget`, bundle ID
+  `com.MarkFriedlander.Reflect.widget`.
+- All three families (small, medium, large), same visual layout,
+  black field + white text + centered, font size scales with family,
+  `minimumScaleFactor(0.7)` for longer prompts on small.
+- Timeline: 8 entries spaced 40–70 min apart, cluster-avoidance
+  applied within each batch (same algorithm as PromptEngine).
+- Tap triggers `RefreshIntent` (App Intent) → `WidgetCenter.reloadTimelines`
+  → fresh card in place, no app launch.
+- Curated library only; no AFM (would burn battery for no UX gain at
+  this surface size).
+- Embedded in iOS app via PBXCopyFilesBuildPhase (plug-ins destination)
+  and target dependency.
+
+**Watch complication** in [WatchWidget/](../WatchWidget/):
+- New extension target `ReflectWatchWidget`, bundle ID
+  `com.MarkFriedlander.Reflect.watchkitapp.complication`.
+- Three accessory families: `.accessoryRectangular` (full prompt),
+  `.accessoryInline` (first ~6 words), `.accessoryCircular` (first ~3
+  words, very small).
+- Timeline: 12 entries spaced 40–70 min — ~20 refreshes/day, comfortably
+  under watchOS's ~50/day budget floor.
+- Ambient only — taps fall through to opening the watch app, no
+  interactive intent.
+- Embedded in Watch app target.
+
+**Xcode target wiring** via [Tools/add_widget_targets.rb](../Tools/add_widget_targets.rb):
+- Idempotent Ruby script using the xcodeproj gem.
+- Adds both extension targets with proper product types
+  (`app-extension`, `watch2-extension`).
+- Creates synchronized folder groups (`Widget/`, `WatchWidget/`),
+  links them to the new targets + `Shared/` for cross-target code.
+- Membership exceptions on Info.plist so the sync group doesn't
+  double-include it (build error mode from first run — fixed).
+- Wires "Embed App Extensions" copy-files phases on both host apps.
+- Aligns marketing/build versions between extensions and hosts.
+
+**Build verification.** All three schemes (Reflect / Reflect TV /
+Reflect Watch Watch App) build clean, **zero warnings**, with both
+extensions in place. Widget `.appex` correctly embedded in
+`Reflect.app/PlugIns/`; complication `.appex` in Watch app's PlugIns.
+NSExtensionPointIdentifier verified as `com.apple.widgetkit-extension`
+in both embedded bundles.
+
+**Screenshots.** Discussed with Mark and decided: existing App Store
+screenshots are still accurate (the visual language hasn't changed —
+black field, white centered text). Widget + complication are net-new
+features but not required for submission. We can add widget shots
+later in a metadata-only update. Shipping as-is.
+
+**Deferred to morning** (Mark's hands, not mine):
+- Reflect TV bundle ID change (Universal Purchase requirement).
+- App Store Connect submission flow (Mark via Chrome).
+- Legacy standalone TV app delist (after unified ship is live).

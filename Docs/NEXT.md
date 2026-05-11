@@ -1,65 +1,79 @@
 # NEXT — Reflect: Creative Sparks
 
-The unification work is done in code. What remains is human-loop work —
-device testing, App Store Connect, App Store metadata, and one bundle ID
-change that needs Mark's hands.
+The unification work and v1.0 feature set are code-complete. Two
+human-loop steps remain before shipping; everything after that is
+either App Store Connect work or post-release polish.
 
-## Immediate (Mark, this week)
+---
 
-### 1. Change Reflect TV bundle ID
-For Universal Purchase, change in Xcode:
+## Ship Sequence (morning of release)
+
+### 1. Bundle ID change (Xcode, ~5 min)
+For Reflect TV target:
 `com.MarkFriedlander.Reflect-TV` → `com.MarkFriedlander.Reflect.tv`
-in the **Reflect TV** target's Signing & Capabilities. Will require
-generating new provisioning profile.
+Walkthrough in [XCODE_WIRING.md](XCODE_WIRING.md). Required for
+Universal Purchase association.
 
-### 2. Real-device test pass
-- iPhone 16 Plus AFM — **verified** during QA pass (see QA_REPORT.md).
-  No further action needed unless you want to re-test after any AFM
-  prompt or validator changes.
-- Mac runtime — **verified** via `./Tools/mac_run.sh run`. Full-screen
-  toggle and longer-session feel are still worth a real sit-with.
-- iPad — verify identical iPhone behavior at iPad layout.
-- Apple TV — sit with ambient mode for an hour on real hardware. Does
-  the variable dwell feel right? Adjust constants in
-  `tvOS/TVContentView.swift#nextDwellSeconds()` if not.
-- Apple Watch — tap behavior + haptic on real wrist (sim verified the
-  call fires; only your wrist tells you if it feels right).
+### 2. App Store Connect submission (Chrome, ~30 min)
+- Paste content from [AppStore/APP_STORE_CONTENT.md](AppStore/APP_STORE_CONTENT.md).
+- Enable Universal Purchase on the iOS app listing.
+- Upload new iOS + tvOS builds via Xcode Organizer.
+- Confirm Mac (Designed for iPhone) is enabled in App Store availability.
+- Submit for review.
 
-### 3. Accent color decision
-Currently no accent (pure typography). Strategic Claude proposed a dim
-white-blue or none at all. If white-blue is wanted, tell Claude Code —
-gets wired into the toast text and possibly the TV launch title.
+### 3. After unified release goes live
+- Delist legacy standalone "Reflect TV" listing
+  (App Store Connect → legacy listing → Pricing & Availability →
+  Remove from Sale).
 
 ---
 
-## Release
+## Post-release (v1.0.x)
 
-### 4. Universal Purchase setup
-App Store Connect: associate the tvOS build with the existing iOS app
-record. Confirm metadata pulls correctly.
+### 4. Sit-with sessions
+Claude Code wants extended time with each surface to validate timing
+choices made on intuition. Specifically:
+- TV ambient at full 60–540s dwell for an hour or more.
+- iPhone auto/desk mode for a workday.
+- Fade durations across all surfaces (0.4s Watch / 0.6s iOS / 1.0s TV).
+- Visual weight of pure-white-on-pure-black at different distances.
 
-### 5. Delist legacy TV app
-Only AFTER the unified release ships and is downloadable.
+All these are one-line constants in the view files — single-digit
+number changes if anything needs adjusting. v1.0.1 candidates.
 
-### 6. App Store metadata refresh
-- Display name (Springboard): "Reflect"
-- Full name (App Store): "Reflect: Creative Sparks"
-- Description: emphasize ambient mode (the new thing) without naming AFM.
+### 5. Widget screenshots in App Store gallery
+Optional metadata-only update. The widget is a marquee new feature in
+"What's New" — worth showing visually.
+
+### 6. Accent color decision
+Currently no accent (pure typography). Strategic Claude proposed dim
+white-blue. Five-minute change either way once decided.
+
+### 7. AFM safety classifier tuning
+The second-pass safety classifier is conservative (rejects benign
+prompts like "Pause the clock" alongside genuinely problematic ones).
+Behavior is correct per spec — fail-safe to curated — but if AFM
+contribution to the buffer feels too thin in practice, consider
+narrowing the classifier prompt or relaxing the fail-safe default.
 
 ---
 
-## Post-release
+## Future Scope (not v1.x)
 
-### 7. Watch complication
-The single most Eno-native surface. Rectangular complication family,
-~1 short prompt refreshing on the OS widget budget (a few times an hour).
+### 8. Real-device testing on Apple TVs
+Your Apple TVs are currently `unavailable` in `devicectl list devices`.
+When you have time to re-pair them, install a dev build and validate
+the variable-dwell rhythm in real ambient context.
 
-### 8. Variable-dwell tuning
-After a few weeks of real use, revisit the TV dwell distribution.
+### 9. Variable-dwell distribution v2
+The current 24-sided roll (60–90s quick / 360–540s long / 120–300s base)
+is a starting point. After weeks of real ambient use, reshape based on
+what feels right.
 
-### 9. Curation pass v2
+### 10. Curated library v2
 Harvest the strongest AFM-generated prompts and promote them into the
-curated library.
+curated library. Target stays around 200 — replace weakest curated
+entries with strongest generated ones.
 
 ---
 
@@ -67,6 +81,6 @@ curated library.
 
 - Do not add any feature not on this list without discussing with Mark.
 - AFM is progressive enhancement only — never required, always optional.
-- The prompt is the product. If a feature would distract from the prompt,
-  it doesn't belong in Reflect.
+- The prompt is the product. If a feature would distract from the
+  prompt, it doesn't belong in Reflect.
 - More black, more silence, larger margins, slower fades. Less.

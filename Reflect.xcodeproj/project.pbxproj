@@ -8,9 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		85E4D8352DC47C3E00B7413E /* Reflect Watch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 85E4D8122DC47C3B00B7413E /* Reflect Watch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		9DDED732D2361739BD15975A /* ReflectWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 151786D93DE7299CC855DFF6 /* ReflectWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		AC35AA7B33572E6E9F3705D9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68CC8615FA33015AAE80EF53 /* Foundation.framework */; };
+		E77AA362A80CC9516AEAF555 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BAB5CCFACD8423EEFD53971 /* Foundation.framework */; };
+		F0275D42990302E876A38CCF /* ReflectWatchWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1410E4ABD5D63A215CB7FB49 /* ReflectWatchWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		1FCC20E295A8890E2BA92A27 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 85CE5B9B2DBF365B00D1B87C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC23E79D8A868D134B92DC28;
+			remoteInfo = ReflectWatchWidget;
+		};
+		3F5B13114198BC5CA133BFD7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 85CE5B9B2DBF365B00D1B87C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A920650B2EE1EAAB3531C01;
+			remoteInfo = ReflectWidget;
+		};
 		852BEF7C2DC6C633006A5D3A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 85CE5B9B2DBF365B00D1B87C /* Project object */;
@@ -74,9 +92,35 @@
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8F3BE10F52D94734123D6B4D /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				F0275D42990302E876A38CCF /* ReflectWatchWidget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBB3B5D8D22F6DB36C6FEF65 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				9DDED732D2361739BD15975A /* ReflectWidget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0BAB5CCFACD8423EEFD53971 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		1410E4ABD5D63A215CB7FB49 /* ReflectWatchWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ReflectWatchWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		151786D93DE7299CC855DFF6 /* ReflectWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ReflectWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		68CC8615FA33015AAE80EF53 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS11.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		852BEF6C2DC6C62F006A5D3A /* Reflect TV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reflect TV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		852BEF7B2DC6C633006A5D3A /* Reflect TVTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Reflect TVTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		852BEF852DC6C633006A5D3A /* Reflect TVUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Reflect TVUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +132,23 @@
 		85E4D82B2DC47C3E00B7413E /* Reflect Watch Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Reflect Watch Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		924BB02107E11072B5556921 /* Exceptions for "Widget" folder in "ReflectWidget" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 9A920650B2EE1EAAB3531C01 /* ReflectWidget */;
+		};
+		ACF1A3BF9DC5F7066F4F8CA8 /* Exceptions for "WatchWidget" folder in "ReflectWatchWidget" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = EC23E79D8A868D134B92DC28 /* ReflectWatchWidget */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		6260A1F4A34240CA9E08B1BE /* Shared */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
@@ -96,11 +157,27 @@
 			path = Shared;
 			sourceTree = "<group>";
 		};
+		6612DCD071B2CB43349ED9A2 /* WatchWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				ACF1A3BF9DC5F7066F4F8CA8 /* Exceptions for "WatchWidget" folder in "ReflectWatchWidget" target */,
+			);
+			path = WatchWidget;
+			sourceTree = "<group>";
+		};
 		7914FDE2994F27E30E9E7944 /* Watch */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 			);
 			path = Watch;
+			sourceTree = "<group>";
+		};
+		7F9F87EE1E8AD047D5DE7E0C /* Widget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				924BB02107E11072B5556921 /* Exceptions for "Widget" folder in "ReflectWidget" target */,
+			);
+			path = Widget;
 			sourceTree = "<group>";
 		};
 		852BEF6D2DC6C630006A5D3A /* Reflect TV */ = {
@@ -141,6 +218,14 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		253319259F7506C6AD8B29F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E77AA362A80CC9516AEAF555 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		852BEF692DC6C62F006A5D3A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -204,9 +289,42 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F1991334EE501506C9F97401 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC35AA7B33572E6E9F3705D9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A701668A106359C012E957B /* watchOS */ = {
+			isa = PBXGroup;
+			children = (
+				68CC8615FA33015AAE80EF53 /* Foundation.framework */,
+			);
+			name = watchOS;
+			sourceTree = "<group>";
+		};
+		4CBAFDDE47F1E54DA7BEF5A8 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				0BAB5CCFACD8423EEFD53971 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		755B0BED56C254DC05C87631 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4CBAFDDE47F1E54DA7BEF5A8 /* iOS */,
+				2A701668A106359C012E957B /* watchOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		85CE5B9A2DBF365B00D1B87C = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +336,9 @@
 				89E6571238651E8A1C0FA8BD /* iOS */,
 				F910688EF0839550BE429FED /* tvOS */,
 				7914FDE2994F27E30E9E7944 /* Watch */,
+				755B0BED56C254DC05C87631 /* Frameworks */,
+				7F9F87EE1E8AD047D5DE7E0C /* Widget */,
+				6612DCD071B2CB43349ED9A2 /* WatchWidget */,
 			);
 			sourceTree = "<group>";
 		};
@@ -233,6 +354,8 @@
 				852BEF6C2DC6C62F006A5D3A /* Reflect TV.app */,
 				852BEF7B2DC6C633006A5D3A /* Reflect TVTests.xctest */,
 				852BEF852DC6C633006A5D3A /* Reflect TVUITests.xctest */,
+				151786D93DE7299CC855DFF6 /* ReflectWidget.appex */,
+				1410E4ABD5D63A215CB7FB49 /* ReflectWatchWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -306,11 +429,13 @@
 				85CE5BA02DBF365B00D1B87C /* Frameworks */,
 				85CE5BA12DBF365B00D1B87C /* Resources */,
 				85E4D8362DC47C3E00B7413E /* Embed Watch Content */,
+				DBB3B5D8D22F6DB36C6FEF65 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				85E4D8342DC47C3E00B7413E /* PBXTargetDependency */,
+				A76C4AEF89970D82C239CD92 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				85CE5BA52DBF365B00D1B87C /* Reflect */,
@@ -365,10 +490,12 @@
 				85E4D80E2DC47C3B00B7413E /* Sources */,
 				85E4D80F2DC47C3B00B7413E /* Frameworks */,
 				85E4D8102DC47C3B00B7413E /* Resources */,
+				8F3BE10F52D94734123D6B4D /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				4DBF1936370B0E07E943871C /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				85E4D8132DC47C3B00B7413E /* Reflect Watch Watch App */,
@@ -415,6 +542,48 @@
 			productName = "Reflect Watch Watch AppUITests";
 			productReference = 85E4D82B2DC47C3E00B7413E /* Reflect Watch Watch AppUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		9A920650B2EE1EAAB3531C01 /* ReflectWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 38E98200F95B23621F874395 /* Build configuration list for PBXNativeTarget "ReflectWidget" */;
+			buildPhases = (
+				0A9E119A1FE6C8078E531B02 /* Sources */,
+				253319259F7506C6AD8B29F0 /* Frameworks */,
+				D3399F9CF45DAF481C5686DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				7F9F87EE1E8AD047D5DE7E0C /* Widget */,
+				6260A1F4A34240CA9E08B1BE /* Shared */,
+			);
+			name = ReflectWidget;
+			productName = ReflectWidget;
+			productReference = 151786D93DE7299CC855DFF6 /* ReflectWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		EC23E79D8A868D134B92DC28 /* ReflectWatchWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 31C92AA99994432C1A64CDF5 /* Build configuration list for PBXNativeTarget "ReflectWatchWidget" */;
+			buildPhases = (
+				EC040FD25FBAC193BAAEF462 /* Sources */,
+				F1991334EE501506C9F97401 /* Frameworks */,
+				184E8AE744850265785C5F3B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				6612DCD071B2CB43349ED9A2 /* WatchWidget */,
+				6260A1F4A34240CA9E08B1BE /* Shared */,
+			);
+			name = ReflectWatchWidget;
+			productName = ReflectWatchWidget;
+			productReference = 1410E4ABD5D63A215CB7FB49 /* ReflectWatchWidget.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -484,11 +653,20 @@
 				852BEF6B2DC6C62F006A5D3A /* Reflect TV */,
 				852BEF7A2DC6C633006A5D3A /* Reflect TVTests */,
 				852BEF842DC6C633006A5D3A /* Reflect TVUITests */,
+				9A920650B2EE1EAAB3531C01 /* ReflectWidget */,
+				EC23E79D8A868D134B92DC28 /* ReflectWatchWidget */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		184E8AE744850265785C5F3B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		852BEF6A2DC6C62F006A5D3A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -552,9 +730,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D3399F9CF45DAF481C5686DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0A9E119A1FE6C8078E531B02 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		852BEF682DC6C62F006A5D3A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -618,9 +810,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EC040FD25FBAC193BAAEF462 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		4DBF1936370B0E07E943871C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ReflectWatchWidget;
+			target = EC23E79D8A868D134B92DC28 /* ReflectWatchWidget */;
+			targetProxy = 1FCC20E295A8890E2BA92A27 /* PBXContainerItemProxy */;
+		};
 		852BEF7D2DC6C633006A5D3A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 852BEF6B2DC6C62F006A5D3A /* Reflect TV */;
@@ -656,9 +861,68 @@
 			target = 85E4D8112DC47C3B00B7413E /* Reflect Watch Watch App */;
 			targetProxy = 85E4D8332DC47C3E00B7413E /* PBXContainerItemProxy */;
 		};
+		A76C4AEF89970D82C239CD92 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ReflectWidget;
+			target = 9A920650B2EE1EAAB3531C01 /* ReflectWidget */;
+			targetProxy = 3F5B13114198BC5CA133BFD7 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		22335FEA1E757EEF61D299BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = FBUNBDS7R7;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Widget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MarkFriedlander.Reflect.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		38DB0EE8EEECE274D87F0C79 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = FBUNBDS7R7;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = WatchWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MarkFriedlander.Reflect.watchkitapp.complication;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Debug;
+		};
 		852BEF8E2DC6C633006A5D3A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1190,9 +1454,82 @@
 			};
 			name = Release;
 		};
+		A4EF7CC993B3B263F164223E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = FBUNBDS7R7;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = WatchWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MarkFriedlander.Reflect.watchkitapp.complication;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Release;
+		};
+		BECFF600BF208A67D2305CA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = FBUNBDS7R7;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Widget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MarkFriedlander.Reflect.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		31C92AA99994432C1A64CDF5 /* Build configuration list for PBXNativeTarget "ReflectWatchWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A4EF7CC993B3B263F164223E /* Release */,
+				38DB0EE8EEECE274D87F0C79 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		38E98200F95B23621F874395 /* Build configuration list for PBXNativeTarget "ReflectWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BECFF600BF208A67D2305CA6 /* Release */,
+				22335FEA1E757EEF61D299BA /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		852BEF8D2DC6C633006A5D3A /* Build configuration list for PBXNativeTarget "Reflect TV" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
