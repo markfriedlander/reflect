@@ -376,8 +376,8 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				852BEF6D2DC6C630006A5D3A /* Reflect TV */,
 				6260A1F4A34240CA9E08B1BE /* Shared */,
+				852BEF6D2DC6C630006A5D3A /* Reflect TV */,
 				F910688EF0839550BE429FED /* tvOS */,
 			);
 			name = "Reflect TV";
@@ -438,8 +438,8 @@
 				A76C4AEF89970D82C239CD92 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				85CE5BA52DBF365B00D1B87C /* Reflect */,
 				6260A1F4A34240CA9E08B1BE /* Shared */,
+				85CE5BA52DBF365B00D1B87C /* Reflect */,
 				89E6571238651E8A1C0FA8BD /* iOS */,
 			);
 			name = Reflect;
@@ -498,9 +498,9 @@
 				4DBF1936370B0E07E943871C /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				85E4D8132DC47C3B00B7413E /* Reflect Watch Watch App */,
 				6260A1F4A34240CA9E08B1BE /* Shared */,
 				7914FDE2994F27E30E9E7944 /* Watch */,
+				85E4D8132DC47C3B00B7413E /* Reflect Watch Watch App */,
 			);
 			name = "Reflect Watch Watch App";
 			productName = "Reflect Watch Watch App";
@@ -556,8 +556,8 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				7F9F87EE1E8AD047D5DE7E0C /* Widget */,
 				6260A1F4A34240CA9E08B1BE /* Shared */,
+				7F9F87EE1E8AD047D5DE7E0C /* Widget */,
 			);
 			name = ReflectWidget;
 			productName = ReflectWidget;
@@ -577,8 +577,8 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				6612DCD071B2CB43349ED9A2 /* WatchWidget */,
 				6260A1F4A34240CA9E08B1BE /* Shared */,
+				6612DCD071B2CB43349ED9A2 /* WatchWidget */,
 			);
 			name = ReflectWatchWidget;
 			productName = ReflectWatchWidget;
@@ -876,7 +876,7 @@
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FBUNBDS7R7;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Widget/Info.plist;
@@ -886,7 +886,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.MarkFriedlander.Reflect.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -903,7 +903,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = NO;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FBUNBDS7R7;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = WatchWidget/Info.plist;
@@ -912,8 +912,8 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.MarkFriedlander.Reflect.watchkitapp.complication;
+				MARKETING_VERSION = 2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MarkFriedlander.Reflect.watchkitapp.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -943,8 +943,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.MarkFriedlander.Reflect-TV";
+				MARKETING_VERSION = 2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MarkFriedlander.Reflect.tv;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -974,8 +974,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.MarkFriedlander.Reflect-TV";
+				MARKETING_VERSION = 2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MarkFriedlander.Reflect.tv;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1188,7 +1188,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Reflect/Preview Content\"";
 				DEVELOPMENT_TEAM = FBUNBDS7R7;
 				ENABLE_PREVIEWS = YES;
@@ -1204,7 +1204,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.MarkFriedlander.Reflect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1219,7 +1219,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Reflect/Preview Content\"";
 				DEVELOPMENT_TEAM = FBUNBDS7R7;
 				ENABLE_PREVIEWS = YES;
@@ -1235,7 +1235,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.MarkFriedlander.Reflect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1322,7 +1322,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Reflect Watch Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = FBUNBDS7R7;
 				ENABLE_PREVIEWS = YES;
@@ -1334,7 +1334,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.MarkFriedlander.Reflect.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -1352,7 +1352,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Reflect Watch Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = FBUNBDS7R7;
 				ENABLE_PREVIEWS = YES;
@@ -1364,7 +1364,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.MarkFriedlander.Reflect.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -1459,7 +1459,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = NO;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FBUNBDS7R7;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = WatchWidget/Info.plist;
@@ -1468,8 +1468,8 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.MarkFriedlander.Reflect.watchkitapp.complication;
+				MARKETING_VERSION = 2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MarkFriedlander.Reflect.watchkitapp.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1486,7 +1486,7 @@
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FBUNBDS7R7;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Widget/Info.plist;
@@ -1496,7 +1496,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.MarkFriedlander.Reflect.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
