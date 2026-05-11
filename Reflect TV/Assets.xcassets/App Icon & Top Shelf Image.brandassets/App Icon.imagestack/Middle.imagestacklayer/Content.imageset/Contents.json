@@ -2,7 +2,13 @@
   "images" : [
     {
       "filename" : "Reflect TV 400x240 flat.png",
-      "idiom" : "tv"
+      "idiom" : "tv",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "Reflect TV 800x480 flat@2x.png",
+      "idiom" : "tv",
+      "scale" : "2x"
     }
   ],
   "info" : {

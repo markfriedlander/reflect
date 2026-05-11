@@ -51,3 +51,4 @@ Timestamp               Ty Process[PID:TID]
 2026-05-11 00:09:01.750 E  Reflect[77944:33d4b1] [com.MarkFriedlander.Reflect:afm] generation error [Perspective] attempt 3: The operation couldn’t be completed. (FoundationModels.LanguageModelSession.GenerationError error -1.)
 2026-05-11 00:09:01.752 Df Reflect[77944:33d4b1] [com.MarkFriedlander.Reflect:afm] generated [Perspective] all retries failed
 2026-05-11 00:09:01.752 I  Reflect[77944:33d4b1] [com.MarkFriedlander.Reflect:afm] refill done size=0
+Child process terminated with signal 9: Killed

@@ -655,3 +655,10 @@ Timestamp               Ty Process[PID:TID]
 2026-05-11 00:25:41.091 Db Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
 2026-05-11 00:30:13.350 I  Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:engine] card #30 [curated] [Reduction] Find the atom of it
 2026-05-11 00:30:13.496 Db Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-11 00:38:21.427 I  Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:engine] card #30 [curated] [Attention] Where is the tension?
+2026-05-11 00:38:21.481 Db Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-11 00:42:13.192 I  Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:engine] card #30 [curated] [Time] Rewrite your history from a different perspective
+2026-05-11 00:42:13.252 Db Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+2026-05-11 00:48:40.547 I  Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:engine] card #30 [curated] [Subtraction] Use fewer elements
+2026-05-11 00:48:40.608 Db Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+Child process terminated with signal 9: Killed

@@ -12,3 +12,4 @@ Timestamp               Ty Process[PID:TID]
 2026-05-10 22:09:35.771 I  Reflect Watch Watch App[64900:30d923] [com.MarkFriedlander.Reflect:watch] haptic .click fired
 2026-05-10 22:09:35.772 I  Reflect Watch Watch App[64900:30d923] [com.MarkFriedlander.Reflect:engine] card #4 [curated] [Constraint] Use the wrong tool
 2026-05-10 22:09:35.772 Db Reflect Watch Watch App[64900:30d923] [com.MarkFriedlander.Reflect:afm] refill check buffer=0 refilling=false available=false
+Child process terminated with signal 9: Killed

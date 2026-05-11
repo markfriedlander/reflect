@@ -31,3 +31,7 @@ Timestamp               Ty Process[PID:TID]
 2026-05-11 00:21:20.143 I  Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:engine] card #28 [curated] [Constraint] Add something that doesn't belong
 2026-05-11 00:25:41.007 I  Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:engine] card #29 [curated] [Process] Find the hidden door
 2026-05-11 00:30:13.350 I  Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:engine] card #30 [curated] [Reduction] Find the atom of it
+2026-05-11 00:38:21.427 I  Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:engine] card #30 [curated] [Attention] Where is the tension?
+2026-05-11 00:42:13.192 I  Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:engine] card #30 [curated] [Time] Rewrite your history from a different perspective
+2026-05-11 00:48:40.547 I  Reflect TV[68969:31db4f] [com.MarkFriedlander.Reflect:engine] card #30 [curated] [Subtraction] Use fewer elements
+Child process terminated with signal 9: Killed
